@@ -1,0 +1,11 @@
+// Cloudflare Workers config: serves this folder as a static site.
+{
+  "name": "irccforg",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": ".",
+    // Unknown URLs get the branded 404.html with a real 404 status
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

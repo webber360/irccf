@@ -2,9 +2,9 @@
 
 One-screen website of IRCCF, the International Radio Controlled Crawler Federation.
 
-Static HTML, no build step. Deployed with Cloudflare Pages from the `main` branch.
+Static HTML, no build step. Deployed as a Cloudflare Worker with static assets from the `main` branch (see `wrangler.jsonc`).
 
-## Cloudflare Pages settings
+## Cloudflare settings
 
 - Framework preset: None
 - Build command: (empty)
@@ -15,7 +15,8 @@ Static HTML, no build step. Deployed with Cloudflare Pages from the `main` branc
 - `index.html` - the page (styles and scripts inline)
 - `404.html` - not-found page
 - `assets/` - fonts (self-hosted Inter and Rajdhani), images, logos, icons
-- `_headers` - security and caching headers for Cloudflare Pages
+- `_headers` - security and caching headers
+- `wrangler.jsonc`, `.assetsignore` - Worker config; repo files are not served
 - `robots.txt`, `sitemap.xml`, `llms.txt` - crawler files
 - `site.webmanifest`, `favicon.*`, `apple-touch-icon.png` - icons
 
