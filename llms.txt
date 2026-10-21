@@ -16,3 +16,5 @@
 - Registration number: 12-09-012417 (Company Registry Court of the Balassagyarmat Regional Court)
 - Tax number: 25469118-1-12
 - Email: hello@irccf.org
+- Hosting provider: Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA, abuse@cloudflare.com
+- Privacy policy: https://irccf.org/privacy
