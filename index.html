@@ -536,6 +536,8 @@
       color: var(--muted);
     }
     .imprint__bar p { margin: 0; }
+    /* Copyright + Cookie settings wrap cleanly: on narrow screens the link drops to its own line, flush left */
+    .imprint__legal { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
     .made-by { text-decoration: none; transition: color 160ms ease; }
     .made-by strong { font-weight: 600; color: var(--ink); }
     @media (hover: hover) and (pointer: fine) {
@@ -545,7 +547,7 @@
 
     /* ---------- Cookie consent ---------- */
     .linkish {
-      appearance: none; background: none; border: 0; padding: 0; margin: 0 0 0 18px;
+      appearance: none; background: none; border: 0; padding: 0; margin: 0;
       font: inherit; color: inherit; cursor: pointer;
       text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px;
       transition: color 160ms ease, text-decoration-color 160ms ease;
@@ -729,7 +731,7 @@
       <b>Imprint</b><span class="sep">/</span>Company Name: <span class="v">IRCCF Licensing Ltd.</span><span class="sep">/</span>Registered seat: <span class="v">Toldi utca 4, 3066 Kutasó, Hungary</span><span class="sep">/</span>Registration number: <span class="v">12-09-012417</span> (Company Registry Court of the Balassagyarmat Regional Court)<span class="sep">/</span>Tax number: <span class="v">25469118-1-12</span><span class="sep">/</span>Email: <a href="mailto:hello@irccf.org"><span class="v">hello@irccf.org</span></a><span class="sep">/</span>Hosting provider: <span class="v">Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.</span>
     </p>
     <div class="imprint__bar">
-      <p>© <span id="year">2026</span> IRCCF Licensing Ltd. All rights reserved.<button class="linkish" type="button" data-consent-open>Cookie settings</button></p>
+      <p class="imprint__legal"><span>© <span id="year">2026</span> IRCCF Licensing Ltd. All rights reserved.</span><button class="linkish" type="button" data-consent-open>Cookie settings</button></p>
       <p><a class="made-by" href="https://webber360.com" target="_blank" rel="noopener noreferrer">// Made by <strong>W360º</strong></a></p>
     </div>
   </footer>
