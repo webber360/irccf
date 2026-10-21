@@ -1,0 +1,22 @@
+# irccf.org
+
+One-screen website of IRCCF, the International Radio Controlled Crawler Federation.
+
+Static HTML, no build step. Deployed with Cloudflare Pages from the `main` branch.
+
+## Cloudflare Pages settings
+
+- Framework preset: None
+- Build command: (empty)
+- Build output directory: `/`
+
+## Structure
+
+- `index.html` - the page (styles and scripts inline)
+- `404.html` - not-found page
+- `assets/` - fonts (self-hosted Inter and Rajdhani), images, logos, icons
+- `_headers` - security and caching headers for Cloudflare Pages
+- `robots.txt`, `sitemap.xml`, `llms.txt` - crawler files
+- `site.webmanifest`, `favicon.*`, `apple-touch-icon.png` - icons
+
+Made by W360º - https://webber360.com

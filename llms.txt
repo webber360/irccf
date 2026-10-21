@@ -1,0 +1,18 @@
+# IRCCF
+
+> IRCCF, the International Radio Controlled Crawler Federation, has been serving pro rock crawler R/C since 2019. It runs three projects: PROCRAWLER, the Linekillaz GTC series and the WRCCA World Ranking.
+
+## Projects
+
+- [PROCRAWLER](https://getprocrawler.com): Pro Rock Crawler R/C
+- [Linekillaz GTC](https://linekillazcompz.org): Rock Crawler R/C Series
+- [WRCCA World Ranking](https://wrccaworldranking.org): World ranking of rock crawler RC drivers.
+
+## Organization
+
+- Website: https://irccf.org/
+- Company name: IRCCF Licensing Ltd.
+- Registered seat: Toldi utca 4, 3066 Kutasó, Hungary
+- Registration number: 12-09-012417 (Company Registry Court of the Balassagyarmat Regional Court)
+- Tax number: 25469118-1-12
+- Email: hello@irccf.org
