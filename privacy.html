@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy Policy · IRCCF</title>
+  <meta name="description" content="How IRCCF Licensing Ltd. processes personal data on irccf.org: hosting, Google Analytics with consent, email contact, cookies and your GDPR rights.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://irccf.org/privacy">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IRCCF">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://irccf.org/privacy">
+  <meta property="og:title" content="Privacy Policy · IRCCF">
+  <meta property="og:description" content="Serving pro rock crawler R/C since 2019. PROCRAWLER, Linekillaz GTC and the WRCCA World Ranking.">
+  <meta property="og:image" content="https://irccf.org/assets/img/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="IRCCF: Serving Pro Rock Crawler R/C Since 2019, with the PROCRAWLER, Linekillaz GTC and WRCCA World Ranking logos">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy · IRCCF">
+  <meta name="twitter:description" content="Serving pro rock crawler R/C since 2019. PROCRAWLER, Linekillaz GTC and the WRCCA World Ranking.">
+  <meta name="twitter:image" content="https://irccf.org/assets/img/og-image.jpg">
+  <meta name="twitter:image:alt" content="IRCCF: Serving Pro Rock Crawler R/C Since 2019">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('irccf-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preload" href="/assets/fonts/inter-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/rajdhani-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    /* ---------- Fonts (self-hosted) ---------- */
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/inter-latin-wght.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Rajdhani";
+      src: url("/assets/fonts/rajdhani-latin-700.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ---------- Tokens ----------
+       Layout: framed hero photo, headline and projects laid straight onto the image,
+       imprint set as a compact billing block below the fold.
+       Shape rule: every image, panel and control uses a 5px radius. */
+    :root {
+      --lime: #D0F93B;
+      --page: #ffffff;
+      --surface: #ffffff;
+      --ink: #1a1a1a;
+      --muted: #5f6166;
+      --line: rgba(26, 26, 26, .12);
+      --hover: #f3f3f3;
+      --focus: #1a1a1a;
+      --control-bg: #1a1a1a;
+      --control-fg: #ffffff;
+      --shadow: 0 1px 2px rgba(26, 26, 26, .06), 0 16px 40px -12px rgba(26, 26, 26, .22);
+
+      --on-hero: #ffffff;
+      --on-hero-muted: rgba(255, 255, 255, .74);
+      --on-hero-line: rgba(255, 255, 255, .18);
+
+      --radius: 5px;
+      --gutter: clamp(8px, 1.1vw, 16px);
+      --inset: clamp(18px, 3.6vw, 60px);
+      --header-h: clamp(60px, 8vh, 72px);
+
+      --font-text: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-display: "Rajdhani", "Arial Narrow", "Roboto Condensed", ui-sans-serif, sans-serif;
+
+      --ease-out: cubic-bezier(.23, 1, .32, 1);
+
+      color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --page: #0f0f10;
+      --surface: #19191b;
+      --ink: #f2f2f2;
+      --muted: #a2a4aa;
+      --line: rgba(255, 255, 255, .12);
+      --hover: rgba(255, 255, 255, .06);
+      --focus: #D0F93B;
+      --control-bg: #f2f2f2;
+      --control-fg: #1a1a1a;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 20px 50px -12px rgba(0, 0, 0, .7);
+      color-scheme: dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --page: #0f0f10;
+        --surface: #19191b;
+        --ink: #f2f2f2;
+        --muted: #a2a4aa;
+        --line: rgba(255, 255, 255, .12);
+        --hover: rgba(255, 255, 255, .06);
+        --focus: #D0F93B;
+        --control-bg: #f2f2f2;
+        --control-fg: #1a1a1a;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 20px 50px -12px rgba(0, 0, 0, .7);
+        color-scheme: dark;
+      }
+    }
+
+    /* ---------- Base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--font-text);
+      font-size: 16px;
+      line-height: 1.5;
+      font-feature-settings: "cv11", "ss03";
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 240ms ease, color 240ms ease;
+    }
+    a { color: inherit; }
+    img, svg { display: block; }
+    :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+    .hero :focus-visible { outline-color: var(--lime); }
+
+    /* ---------- First screen ---------- */
+    .screen {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: relative;
+      z-index: 20;
+      height: var(--header-h);
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 calc(var(--gutter) + var(--inset));
+    }
+    .brand { display: inline-flex; text-decoration: none; }
+    .brand svg { height: clamp(26px, 3.6vh, 32px); width: auto; }
+    .brand .logo-ink { fill: var(--ink); transition: fill 240ms ease; }
+    .brand .logo-bar { fill: var(--lime); }
+
+    .actions { position: relative; display: flex; align-items: center; gap: 8px; }
+
+    .icon-btn {
+      width: 40px; height: 40px;
+      display: grid; place-items: center;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+      padding: 0;
+      transition: transform 160ms var(--ease-out), background-color 240ms ease, border-color 240ms ease, color 240ms ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .icon-btn:active { transform: scale(.95); }
+    .icon-btn svg { width: 18px; height: 18px; grid-area: 1 / 1; transition: opacity 200ms ease, transform 260ms var(--ease-out), filter 200ms ease; }
+    .theme-toggle .i-sun { opacity: 0; transform: rotate(-60deg) scale(.6); filter: blur(2px); }
+    :root[data-theme="dark"] .theme-toggle .i-sun { opacity: 1; transform: none; filter: none; }
+    :root[data-theme="dark"] .theme-toggle .i-moon { opacity: 0; transform: rotate(60deg) scale(.6); filter: blur(2px); }
+
+    .menu-btn { background: var(--control-bg); color: var(--control-fg); border-color: transparent; }
+    .menu-btn .bars { position: relative; width: 16px; height: 10px; grid-area: 1 / 1; }
+    .menu-btn .bars span {
+      position: absolute; left: 0; right: 0; height: 1.6px; border-radius: 2px;
+      background: currentColor;
+      transition: transform 240ms var(--ease-out), top 240ms var(--ease-out);
+    }
+    .menu-btn .bars span:nth-child(1) { top: 1px; }
+    .menu-btn .bars span:nth-child(2) { top: 7.4px; }
+    .menu-btn[aria-expanded="true"] .bars span:nth-child(1) { top: 4.2px; transform: rotate(45deg); }
+    .menu-btn[aria-expanded="true"] .bars span:nth-child(2) { top: 4.2px; transform: rotate(-45deg); }
+    @media (hover: hover) and (pointer: fine) {
+      .theme-toggle:hover { background: var(--hover); }
+    }
+
+    /* ---------- Pop-up menu ---------- */
+    .menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: min(290px, calc(100vw - 2 * var(--gutter) - 16px));
+      padding: 8px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transform-origin: top right;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px) scale(.97);
+      transition: opacity 140ms ease, transform 140ms var(--ease-out), visibility 0s linear 140ms, background-color 240ms ease;
+    }
+    .menu[data-open] {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition: opacity 200ms var(--ease-out), transform 220ms var(--ease-out), visibility 0s, background-color 240ms ease;
+    }
+    .menu__title {
+      margin: 8px 12px 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .menu ul { list-style: none; margin: 0; padding: 0; }
+    /* Links cascade in on open; on close they leave together with the panel, no delay */
+    .menu li { opacity: 0; transform: translateY(-4px); transition: opacity 160ms ease, transform 200ms var(--ease-out); }
+    .menu[data-open] li { opacity: 1; transform: none; }
+    .menu[data-open] li:nth-child(1) { transition-delay: 40ms; }
+    .menu[data-open] li:nth-child(2) { transition-delay: 70ms; }
+    .menu[data-open] li:nth-child(3) { transition-delay: 100ms; }
+    @media (prefers-reduced-motion: reduce) { .menu li { transform: none; } }
+    .menu a {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 11px 12px;
+      border-radius: var(--radius);
+      font-size: 15.5px;
+      font-weight: 500;
+      letter-spacing: -.01em;
+      text-decoration: none;
+      transition: background-color 160ms ease;
+    }
+    .menu a svg { width: 16px; height: 16px; color: var(--muted); transition: transform 200ms var(--ease-out), color 160ms ease; }
+    .menu a:active { background: var(--hover); }
+    @media (hover: hover) and (pointer: fine) {
+      .menu a:hover { background: var(--hover); }
+      .menu a:hover svg { transform: translate(2px, -2px); color: var(--ink); }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin: 0 var(--gutter) var(--gutter);
+      padding: clamp(28px, 6vh, 96px) var(--inset) clamp(22px, 4.4vh, 52px);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #121212;
+      color: var(--on-hero);
+    }
+    .hero__media { position: absolute; inset: 0; z-index: -2; }
+    .hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
+    /* Scrim: keeps the headline and project info readable straight on the photo */
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0; z-index: -1;
+      background:
+        linear-gradient(to top, rgba(10, 10, 10, .88) 0%, rgba(10, 10, 10, .55) 30%, rgba(10, 10, 10, 0) 64%),
+        linear-gradient(to right, rgba(10, 10, 10, .4), rgba(10, 10, 10, 0) 60%);
+      pointer-events: none;
+    }
+
+    .hero__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      /* Sized so the longest line ("Rock Crawler R/C", about 7.8em wide) spans the hero width,
+         capped by viewport height so the projects always stay on the first screen. */
+      font-size: min(calc((100vw - 2 * var(--gutter) - 2 * var(--inset)) / 7.95), 15.5vh, 11rem);
+      line-height: .86;
+      letter-spacing: -.022em;
+    }
+    /* Each line is its own mask so the text can slide up from behind it on load */
+    .hero__title .line { display: block; overflow: hidden; padding-block: .06em; margin-block: -.06em; }
+    .hero__title .line__in { display: block; }
+    .hero__title .since { color: var(--lime); }
+
+    /* ---------- Projects (directly on the photo) ---------- */
+    .projects { margin-top: clamp(26px, 6vh, 72px); }
+    .projects__title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 0 clamp(16px, 3vh, 32px);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--on-hero-muted);
+    }
+    .projects__title::after { content: ""; flex: 1; height: 1px; background: var(--on-hero-line); }
+
+    .projects__list {
+      --u: clamp(48px, min(6vw, 9.2vh), 92px);   /* logo slot height */
+      list-style: none; margin: 0; padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(24px, 4vw, 72px);
+    }
+    .project { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+
+    /* Logos are optically balanced, not equal height: the wide boxed PROCRAWLER mark
+       and the solid WRCCA mark sit smaller than the open, detailed Linekillaz badge. */
+    .project__logo {
+      display: flex;
+      align-items: center;
+      height: var(--u);
+      margin-bottom: clamp(14px, 2.4vh, 24px);
+      transition: opacity 200ms ease;
+    }
+    .project__logo img { width: auto; max-width: 100%; transition: transform 220ms var(--ease-out); }
+    @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+      .project:hover .project__logo img { transform: translateY(-3px) scale(1.03); }
+    }
+    .project__logo--pc img { height: calc(var(--u) * .66); }
+    .project__logo--lk img { height: calc(var(--u) * .95); }
+    .project__logo--wr img { height: calc(var(--u) * .76); }
+
+    .project__name {
+      font-size: clamp(16px, 1.2vw, 19px);
+      font-weight: 600;
+      letter-spacing: -.015em;
+      line-height: 1.25;
+      color: var(--on-hero);
+      text-decoration: none;
+    }
+    .project__desc {
+      margin: 3px 0 0;
+      font-size: clamp(13.5px, .98vw, 15px);
+      line-height: 1.4;
+      color: var(--on-hero-muted);
+    }
+
+    /* Text link with a looping arrow on hover */
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: clamp(10px, 1.8vh, 16px);
+      padding: 4px 0;
+      font-size: clamp(14px, 1vw, 15px);
+      font-weight: 600;
+      letter-spacing: -.005em;
+      color: var(--on-hero);
+      text-decoration: none;
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cta__label {
+      background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat;
+      padding-bottom: 2px;
+      transition: background-size 280ms var(--ease-out);
+    }
+    .cta__arrow { position: relative; width: 16px; height: 16px; overflow: hidden; flex: none; }
+    .cta__arrow svg {
+      position: absolute; inset: 0; width: 16px; height: 16px;
+      transition: transform 320ms var(--ease-out);
+    }
+    .cta__arrow svg + svg { transform: translateX(-120%); }
+    .cta:active { transform: translateY(1px); }
+    @media (hover: hover) and (pointer: fine) {
+      .cta:hover .cta__label { background-size: 100% 1px; }
+      .cta:hover .cta__arrow svg:first-child { transform: translateX(120%); }
+      .cta:hover .cta__arrow svg + svg { transform: none; }
+      .project__name:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    }
+    .cta:focus-visible .cta__label { background-size: 100% 1px; }
+
+    /* ---------- Imprint: billing-block style, below the fold ---------- */
+    .imprint {
+      padding: clamp(26px, 3.6vw, 44px) calc(var(--gutter) + var(--inset)) clamp(18px, 2.4vw, 28px);
+    }
+    .credits {
+      margin: 0;
+      font-size: 11.5px;
+      line-height: 1.85;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+    .credits b { font-weight: 700; color: var(--ink); letter-spacing: .12em; }
+    .credits .v { color: var(--ink); }
+    .credits .sep { margin: 0 .5em; opacity: .45; }
+    .credits a { text-decoration: none; }
+    .credits a .v { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+
+    .imprint__bar {
+      margin-top: clamp(16px, 2.4vw, 24px);
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px 24px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    .imprint__bar p { margin: 0; }
+    /* Copyright + Cookie settings wrap cleanly: on narrow screens the link drops to its own line, flush left */
+    .imprint__legal { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+    .made-by { text-decoration: none; transition: color 160ms ease; }
+    .made-by strong { font-weight: 600; color: var(--ink); }
+    @media (hover: hover) and (pointer: fine) {
+      .made-by:hover { color: var(--ink); }
+      .credits a:hover .v { text-decoration-color: currentColor; }
+    }
+
+    /* ---------- Cookie consent ---------- */
+    .linkish {
+      appearance: none; background: none; border: 0; padding: 0; margin: 0;
+      font: inherit; color: inherit; cursor: pointer;
+      text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px;
+      transition: color 160ms ease, text-decoration-color 160ms ease;
+    }
+    .consent {
+      position: fixed;
+      z-index: 40;
+      right: calc(var(--gutter) + 12px + env(safe-area-inset-right, 0px));
+      bottom: calc(var(--gutter) + 12px + env(safe-area-inset-bottom, 0px));
+      width: min(380px, calc(100vw - 2 * var(--gutter) - 24px));
+      padding: 18px 18px 16px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(10px);
+      visibility: hidden;
+      transition: opacity 160ms ease, transform 160ms var(--ease-out), visibility 0s linear 160ms, background-color 240ms ease;
+    }
+    .consent[data-show] {
+      opacity: 1; transform: none; visibility: visible;
+      transition: opacity 260ms var(--ease-out), transform 300ms var(--ease-out), visibility 0s, background-color 240ms ease;
+    }
+    .consent__title { margin: 0 0 4px; font-size: 14.5px; font-weight: 600; letter-spacing: -.01em; }
+    .consent__text { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+    .consent__text a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+    .consent__actions { display: flex; gap: 8px; margin-top: 14px; }
+    .consent__btn {
+      flex: 1;
+      height: 38px;
+      border-radius: var(--radius);
+      font: inherit; font-size: 14px; font-weight: 600;
+      cursor: pointer;
+      transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .consent__btn:active { transform: scale(.97); }
+    .consent__btn--primary { background: var(--control-bg); color: var(--control-fg); border: 1px solid transparent; }
+    .consent__btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    @media (hover: hover) and (pointer: fine) {
+      .consent__btn--ghost:hover { background: var(--hover); }
+      .linkish:hover { color: var(--ink); text-decoration-color: currentColor; }
+    }
+    @media (prefers-reduced-motion: reduce) { .consent { transform: none; } }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 760px) {
+      .projects__list { grid-template-columns: 1fr; gap: 0; }
+      .project {
+        display: grid;
+        grid-template-columns: 96px minmax(0, 1fr);
+        column-gap: 16px;
+        align-items: start;
+        padding: clamp(10px, 1.8vh, 14px) 0;
+        border-top: 1px solid var(--on-hero-line);
+      }
+      .project:first-child { padding-top: 0; border-top: 0; }
+      .project:last-child { padding-bottom: 0; }
+      .project__logo {
+        grid-row: 1 / span 3;
+        width: 96px; height: 56px;
+        margin: 0;
+        justify-content: center;
+      }
+      .project__logo--pc img { height: auto; width: 96px; }
+      .project__logo--lk img { height: auto; width: 92px; }
+      .project__logo--wr img { height: 42px; }
+      .project__name, .project__desc, .cta { grid-column: 2; }
+      .cta { justify-self: start; margin-top: 4px; }
+    }
+
+    /* ---------- Theme switch: circular reveal from the toggle (View Transitions) ---------- */
+    ::view-transition-old(root),
+    ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+    /* ---------- Load-in motion (once, sets reading order) ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero__media img { animation: settle 1600ms var(--ease-out) both; }
+      .reveal { animation: rise 720ms var(--ease-out) both; animation-delay: calc(140ms + var(--i, 0) * 70ms); }
+      @keyframes settle { from { transform: scale(1.06); } to { transform: none; } }
+      @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+      /* Title: lines slide up from their masks, "Since 2019" lands last */
+      .hero__title .line__in { animation: line-up 820ms var(--ease-out) both; animation-delay: calc(160ms + var(--l) * 90ms); }
+      @keyframes line-up { from { transform: translateY(105%); } to { transform: none; } }
+
+      /* Projects divider draws left to right, leading the eye from title to projects */
+      .projects__title::after { transform-origin: left center; animation: rule 900ms var(--ease-out) 420ms both; }
+      @keyframes rule { from { transform: scaleX(0); } to { transform: none; } }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .hero__title .line__in { animation: fade 300ms ease both; }
+      @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+      *, *::before, *::after { transition-duration: 1ms !important; }
+    }
+
+    /* ---------- Privacy policy page ---------- */
+    .screen--policy { min-height: 0; }
+    .policy { padding: clamp(16px, 3vw, 40px) calc(var(--gutter) + var(--inset)) 0; }
+    .policy__inner { max-width: 72ch; }
+    .policy__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(2.6rem, 1.6rem + 4vw, 5rem);
+      line-height: .9;
+      letter-spacing: -.022em;
+    }
+    .policy__date { margin: 14px 0 28px; font-size: 13.5px; color: var(--muted); }
+    .policy h2 { margin: 44px 0 12px; font-size: clamp(19px, 1.5vw, 22px); font-weight: 600; letter-spacing: -.02em; line-height: 1.3; text-wrap: balance; }
+    .policy h3 { margin: 26px 0 8px; font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+    .policy p, .policy li { font-size: 15.5px; line-height: 1.65; }
+    .policy p { margin: 0 0 14px; }
+    .policy ul { margin: 0 0 14px; padding-left: 1.2em; display: grid; gap: 6px; }
+    .policy strong { font-weight: 600; }
+    .policy a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+    .policy code { font-size: .92em; padding: 1px 5px; border-radius: 4px; background: var(--hover); }
+    .policy__address { color: var(--muted); }
+    .policy__table { overflow-x: auto; margin: 4px 0 16px; border: 1px solid var(--line); border-radius: var(--radius); }
+    .policy table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 14px; line-height: 1.45; }
+    .policy th { text-align: left; padding: 10px 12px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); background: var(--hover); }
+    .policy td { padding: 10px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+    @media (hover: hover) and (pointer: fine) { .policy a:hover { text-decoration-color: currentColor; } }
+  </style>
+</head>
+<body>
+  <div class="screen screen--policy">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="IRCCF, International Radio Controlled Crawler Federation, home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333.9 66.3" width="161" height="32" aria-hidden="true" focusable="false"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="logo-ink" d="M9.7,65.4H3.9V2.6h-2V65.4H0V.7H5.8V63.6H7.85V.7H9.7Z"/><path class="logo-ink" d="M38.1,32.6h.6l.2-.2h.4v-.1h.5v-.2a10.67,10.67,0,0,0,3.75-2.55A15.56,15.56,0,0,0,46.1,25.9a17,17,0,0,0,1.45-4.3A19.83,19.83,0,0,0,47.9,17a21.85,21.85,0,0,0-1.35-6.25,12.38,12.38,0,0,0-3.45-5,10.82,10.82,0,0,0-3.8-2.35,13,13,0,0,0-4.4-.75q-4.3,0-8.65.1t-8.85.1V63.6h2.2V4.7H35a9.37,9.37,0,0,1,6.1,2,12.7,12.7,0,0,1,3.65,4.8A15.43,15.43,0,0,1,46,17.7a16.69,16.69,0,0,1-1.2,6.35A12,12,0,0,1,41.2,29,9.53,9.53,0,0,1,35.3,31L48.5,65.4H42.3L30.7,35H25.4V65.4H23.45V33H31.9L43.5,63.6h2.2L33.4,31H21.3V65.4H15.5V.7H34.9a13.8,13.8,0,0,1,5.1,1A15.34,15.34,0,0,1,44.3,4.2a15.64,15.64,0,0,1,4,5.8,22.39,22.39,0,0,1,1.55,7,21.78,21.78,0,0,1-.45,5.2,19.9,19.9,0,0,1-1.7,4.85,15.3,15.3,0,0,1-2.95,4,13.3,13.3,0,0,1-4.2,2.75L52.7,65.4h-2l-12-30.9ZM21.3,29.2H34.5a8,8,0,0,0,5.2-1.7,10.56,10.56,0,0,0,3.15-4.2,13.93,13.93,0,0,0,1-5.45,13.93,13.93,0,0,0-1-5.45A10.56,10.56,0,0,0,39.7,8.2a8,8,0,0,0-5.2-1.7H21.3ZM23.4,8.8H34.5a6.28,6.28,0,0,1,4.9,2,9.54,9.54,0,0,1,2.3,4.75,13.44,13.44,0,0,1-.2,5.6,8.23,8.23,0,0,1-2.6,4.45A7,7,0,0,1,34.5,27H23.4Zm2,16.4h9.2a4.43,4.43,0,0,0,3.1-1.1,6.71,6.71,0,0,0,2-3.5A11.15,11.15,0,0,0,40,16.05a8.36,8.36,0,0,0-1.65-3.9,4.44,4.44,0,0,0-3.7-1.65H25.4Z"/><path class="logo-ink" d="M54.9,32.8V15.4A14.31,14.31,0,0,1,59.6,4.5,14.11,14.11,0,0,1,70.4,0,14.24,14.24,0,0,1,81.3,4.5a14.84,14.84,0,0,1,4.5,10.9v7.4H84.1V15.4A13.62,13.62,0,0,0,80,5.8a12.86,12.86,0,0,0-9.6-3.9,12.83,12.83,0,0,0-9.6,3.9,13.76,13.76,0,0,0-4,9.6V50.8a13.63,13.63,0,0,0,4,9.7,13.06,13.06,0,0,0,9.6,4A12.59,12.59,0,0,0,80,60.3a12.42,12.42,0,0,0,4.1-9.5V43.4h1.7v7.4A15.37,15.37,0,0,1,70.4,66.3a14.73,14.73,0,0,1-10.8-4.5,15,15,0,0,1-4.7-11Zm4.1-.5V15.4a10.89,10.89,0,0,1,3.38-8.1A12.67,12.67,0,0,1,66,4.7a11.35,11.35,0,0,1,8.86,0,14.08,14.08,0,0,1,3.73,2.6,11.2,11.2,0,0,1,3.19,8.1v7.4H75.7V15.3a5.31,5.31,0,0,0-1.69-4,5.32,5.32,0,0,0-6-1.25,6.09,6.09,0,0,0-1.79,1.25,5.44,5.44,0,0,0-1.58,4V50.81a5.44,5.44,0,0,0,1.58,4,5.32,5.32,0,0,0,3.87,1.7,5.13,5.13,0,0,0,2.23-.45A6,6,0,0,0,74,54.81a5.24,5.24,0,0,0,1.69-4V43.4h6.1v7.4a10.65,10.65,0,0,1-3.19,8,11.16,11.16,0,0,1-8.16,3.5,10.45,10.45,0,0,1-8.07-3.5,10.18,10.18,0,0,1-3.38-8V32.3Zm3.7.5V15.3A7.21,7.21,0,0,1,64.9,10,7,7,0,0,1,70,7.8a7.51,7.51,0,0,1,7.5,7.5v5.8h2.1V15.3A10.35,10.35,0,0,0,79,11.6a7.19,7.19,0,0,0-2.24-3,8.43,8.43,0,0,0-3-2.1,9.5,9.5,0,0,0-3.68-.7,8.74,8.74,0,0,0-6.57,2.8,8.77,8.77,0,0,0-2.78,6.7V50.9a9.64,9.64,0,0,0,.69,3.75,10.93,10.93,0,0,0,2.09,3.15,9.36,9.36,0,0,0,6.57,2.7,9,9,0,0,0,6.66-2.7A8.8,8.8,0,0,0,79,54.65a10.24,10.24,0,0,0,.65-3.75V45.3H77.5v5.6a7.38,7.38,0,0,1-2.2,5.4A7.23,7.23,0,0,1,70,58.5a6.33,6.33,0,0,1-2.7-.6,9.23,9.23,0,0,1-2.4-1.6,7.12,7.12,0,0,1-2.2-5.4Z"/><path class="logo-ink" d="M90.2,32.8V15.4A14.31,14.31,0,0,1,94.9,4.5a15.33,15.33,0,0,1,21.7,0,14.84,14.84,0,0,1,4.5,10.9v7.4h-1.7V15.4a13.62,13.62,0,0,0-4.1-9.6,13.77,13.77,0,0,0-19.2,0,13.76,13.76,0,0,0-4,9.6V50.8a13.63,13.63,0,0,0,4,9.7,13.06,13.06,0,0,0,9.6,4,12.59,12.59,0,0,0,9.6-4.2,12.42,12.42,0,0,0,4.1-9.5V43.4h1.7v7.4a15.37,15.37,0,0,1-15.4,15.5,14.73,14.73,0,0,1-10.8-4.5,15,15,0,0,1-4.7-11Zm4.1-.5V15.4a10.89,10.89,0,0,1,3.38-8.1,12.67,12.67,0,0,1,3.64-2.6,11.35,11.35,0,0,1,8.86,0,14.08,14.08,0,0,1,3.73,2.6,11.2,11.2,0,0,1,3.19,8.1v7.4H111V15.3a5.31,5.31,0,0,0-1.69-4,5.32,5.32,0,0,0-6-1.25,6.09,6.09,0,0,0-1.79,1.25,5.44,5.44,0,0,0-1.58,4V50.81a5.44,5.44,0,0,0,1.58,4,5.32,5.32,0,0,0,3.87,1.7,5.13,5.13,0,0,0,2.23-.45,6,6,0,0,0,1.73-1.24,5.24,5.24,0,0,0,1.69-4V43.4h6.1v7.4a10.65,10.65,0,0,1-3.19,8,11.16,11.16,0,0,1-8.16,3.5,10.45,10.45,0,0,1-8.07-3.5,10.18,10.18,0,0,1-3.38-8V32.3Zm3.7.5V15.3a7.21,7.21,0,0,1,2.2-5.3,7,7,0,0,1,5.1-2.2,7.51,7.51,0,0,1,7.5,7.5v5.8h2.1V15.3a10.35,10.35,0,0,0-.65-3.7,7.19,7.19,0,0,0-2.24-3,8.43,8.43,0,0,0-3-2.1,9.5,9.5,0,0,0-3.68-.7,8.74,8.74,0,0,0-6.57,2.8A8.77,8.77,0,0,0,96,15.3V50.9a9.64,9.64,0,0,0,.69,3.75,10.93,10.93,0,0,0,2.09,3.15,9.36,9.36,0,0,0,6.57,2.7A9,9,0,0,0,112,57.8a8.8,8.8,0,0,0,2.24-3.15,10.24,10.24,0,0,0,.65-3.75V45.3h-2.1v5.6a7.38,7.38,0,0,1-2.2,5.4,7.23,7.23,0,0,1-5.3,2.2,6.33,6.33,0,0,1-2.7-.6,9.23,9.23,0,0,1-2.4-1.6A7.12,7.12,0,0,1,98,50.9Z"/><path class="logo-ink" d="M135.9,65.4H134V36.2h13.1V30.1H134V8.8h18V6.5H131.9V32.3h13.2v1.8H131.9V65.4h-5.8V.7h27.6V2.6H136.6v.2H128V63.6h2.1V4.7h23.6v5.8H135.9V28.3h13.2v9.8H135.9Z"/><path class="logo-ink" d="M179.49,15.22V1a.19.19,0,0,1,.21-.21h1.07A.18.18,0,0,1,181,1V15.22a.18.18,0,0,1-.2.21H179.7A.19.19,0,0,1,179.49,15.22Z"/><path class="logo-ink" d="M184,15.22V1a.18.18,0,0,1,.2-.21h1.11a.23.23,0,0,1,.23.17l4.19,10.51s0,.06.06.06,0,0,0-.06V1A.19.19,0,0,1,190,.83h1a.19.19,0,0,1,.21.21V15.22a.19.19,0,0,1-.21.21H190a.23.23,0,0,1-.23-.17L185.54,4.75s0-.06-.06,0,0,0,0,.07l0,10.45a.19.19,0,0,1-.21.21h-1.07A.18.18,0,0,1,184,15.22Z"/><path class="logo-ink" d="M200.86,1v.88a.18.18,0,0,1-.2.21H197.9c-.05,0-.08,0-.08.08v13a.19.19,0,0,1-.21.21h-1.06a.19.19,0,0,1-.21-.21v-13c0-.06,0-.08-.08-.08h-2.59a.19.19,0,0,1-.21-.21V1a.19.19,0,0,1,.21-.21h7A.18.18,0,0,1,200.86,1Z"/><path class="logo-ink" d="M209.47,2.13h-4.83c-.06,0-.09,0-.09.08V7.38c0,.06,0,.08.09.08h3a.19.19,0,0,1,.21.21v.9a.19.19,0,0,1-.21.21h-3c-.06,0-.09,0-.09.08v5.19a.08.08,0,0,0,.09.09h4.83c.14,0,.21.06.21.2v.88a.19.19,0,0,1-.21.21h-6.19a.19.19,0,0,1-.21-.21V1a.19.19,0,0,1,.21-.21h6.19a.19.19,0,0,1,.21.21v.88A.19.19,0,0,1,209.47,2.13Z"/><path class="logo-ink" d="M217.61,15.26l-2.15-6.48s0-.07-.09-.07h-1.79c-.05,0-.08,0-.08.09v6.42a.19.19,0,0,1-.21.21h-1.06a.19.19,0,0,1-.21-.21V1a.19.19,0,0,1,.21-.21h3.44a3.08,3.08,0,0,1,2.46,1.11,4.33,4.33,0,0,1,.93,2.9,4.5,4.5,0,0,1-.58,2.35,3.07,3.07,0,0,1-1.58,1.36.08.08,0,0,0-.07.1l2.28,6.57,0,.08c0,.1-.07.15-.19.15h-1.08A.24.24,0,0,1,217.61,15.26ZM213.5,2.19V7.44c0,.06,0,.09.08.09h1.88A1.87,1.87,0,0,0,217,6.79a3.08,3.08,0,0,0,.58-1.95,3.1,3.1,0,0,0-.58-2,1.85,1.85,0,0,0-1.54-.74h-1.88C213.53,2.11,213.5,2.13,213.5,2.19Z"/><path class="logo-ink" d="M221.25,15.22V1a.19.19,0,0,1,.21-.21h1.11a.23.23,0,0,1,.23.17L227,11.51s0,.06.06.06,0,0,0-.06V1a.19.19,0,0,1,.21-.21h1a.19.19,0,0,1,.21.21V15.22a.19.19,0,0,1-.21.21h-1.1a.23.23,0,0,1-.23-.17L222.82,4.75s0-.06-.06,0a.07.07,0,0,0,0,.07l0,10.45a.18.18,0,0,1-.2.21h-1.07A.19.19,0,0,1,221.25,15.22Z"/><path class="logo-ink" d="M237.29,15.24l-.52-2.58a.1.1,0,0,0,0-.07l-.07,0h-3.77l-.08,0a.09.09,0,0,0,0,.07l-.54,2.58c0,.13-.09.19-.23.19H231a.21.21,0,0,1-.16-.06.24.24,0,0,1,0-.17L233.91,1a.22.22,0,0,1,.23-.19h1.25a.21.21,0,0,1,.23.19l3.17,14.18v0a.17.17,0,0,1-.19.19h-1.08A.21.21,0,0,1,237.29,15.24Zm-4.15-3.88h3.27s.06,0,.06-.08l-1.64-8s0-.06-.05-.06,0,0,0,.06l-1.66,8C233.08,11.33,233.1,11.36,233.14,11.36Z"/><path class="logo-ink" d="M246.38,1v.88a.19.19,0,0,1-.21.21h-2.75c-.06,0-.09,0-.09.08v13a.19.19,0,0,1-.21.21h-1.06a.19.19,0,0,1-.21-.21v-13c0-.06,0-.08-.08-.08h-2.59c-.14,0-.2-.07-.2-.21V1c0-.14.06-.21.2-.21h7A.19.19,0,0,1,246.38,1Z"/><path class="logo-ink" d="M248.59,15.22V1a.18.18,0,0,1,.2-.21h1.07a.19.19,0,0,1,.21.21V15.22a.19.19,0,0,1-.21.21h-1.07A.18.18,0,0,1,248.59,15.22Z"/><path class="logo-ink" d="M253.71,14.59a3.55,3.55,0,0,1-1-2.64V4.32a3.56,3.56,0,0,1,1-2.65,3.45,3.45,0,0,1,2.59-1,3.56,3.56,0,0,1,2.63,1,3.6,3.6,0,0,1,1,2.65V12a3.6,3.6,0,0,1-1,2.63,3.53,3.53,0,0,1-2.63,1A3.45,3.45,0,0,1,253.71,14.59Zm4.14-.92a2.3,2.3,0,0,0,.6-1.64V4.25a2.29,2.29,0,0,0-.6-1.65A2,2,0,0,0,256.3,2a2,2,0,0,0-1.52.64,2.33,2.33,0,0,0-.59,1.65V12a2.34,2.34,0,0,0,.59,1.64,2,2,0,0,0,1.52.63A2,2,0,0,0,257.85,13.67Z"/><path class="logo-ink" d="M262.58,15.22V1a.18.18,0,0,1,.2-.21h1.11a.23.23,0,0,1,.23.17l4.19,10.51s0,.06.06.06,0,0,0-.06V1a.19.19,0,0,1,.21-.21h1.05a.18.18,0,0,1,.2.21V15.22a.18.18,0,0,1-.2.21h-1.11a.23.23,0,0,1-.23-.17L264.14,4.75s0-.06-.06,0,0,0,0,.07l0,10.45a.19.19,0,0,1-.21.21h-1.07A.18.18,0,0,1,262.58,15.22Z"/><path class="logo-ink" d="M278.61,15.24l-.52-2.58a.09.09,0,0,0,0-.07l-.08,0h-3.77l-.07,0a.09.09,0,0,0,0,.07l-.55,2.58c0,.13-.09.19-.23.19h-1.06a.21.21,0,0,1-.16-.06.24.24,0,0,1,0-.17L275.23,1a.23.23,0,0,1,.23-.19h1.25a.2.2,0,0,1,.23.19l3.17,14.18v0a.17.17,0,0,1-.19.19h-1.08A.21.21,0,0,1,278.61,15.24Zm-4.15-3.88h3.27a.07.07,0,0,0,.07-.08l-1.65-8s0-.06,0-.06,0,0,0,.06l-1.67,8C274.4,11.33,274.42,11.36,274.46,11.36Z"/><path class="logo-ink" d="M282.34,15.22V1a.19.19,0,0,1,.21-.21h1.06a.19.19,0,0,1,.21.21v13c0,.06,0,.09.08.09h4.78c.14,0,.21.06.21.2v.88a.19.19,0,0,1-.21.21h-6.13A.19.19,0,0,1,282.34,15.22Z"/><path class="logo-ink" d="M185.08,40.28l-2.15-6.48a.08.08,0,0,0-.08-.07h-1.79a.08.08,0,0,0-.09.09v6.42a.18.18,0,0,1-.2.21H179.7a.19.19,0,0,1-.21-.21V26a.19.19,0,0,1,.21-.21h3.44a3.05,3.05,0,0,1,2.46,1.11,4.28,4.28,0,0,1,.94,2.89,4.51,4.51,0,0,1-.58,2.36,3.09,3.09,0,0,1-1.59,1.36c-.05,0-.07,0-.06.1l2.27,6.57,0,.08q0,.15-.18.15h-1.09A.25.25,0,0,1,185.08,40.28ZM181,27.21v5.25a.08.08,0,0,0,.09.09h1.87a1.87,1.87,0,0,0,1.55-.75,3,3,0,0,0,.58-1.94,3.15,3.15,0,0,0-.58-2,1.89,1.89,0,0,0-1.55-.74h-1.87A.08.08,0,0,0,181,27.21Z"/><path class="logo-ink" d="M194.75,40.26l-.52-2.59a.09.09,0,0,0,0-.06l-.07,0h-3.77l-.08,0a.09.09,0,0,0,0,.06l-.54,2.59a.2.2,0,0,1-.23.19h-1.06a.18.18,0,0,1-.16-.07.2.2,0,0,1,0-.16L191.38,26a.22.22,0,0,1,.23-.19h1.25a.21.21,0,0,1,.23.19l3.17,14.18v0a.17.17,0,0,1-.19.19H195A.23.23,0,0,1,194.75,40.26Zm-4.14-3.88h3.27s.06,0,.06-.08l-1.65-8s0-.06,0-.06,0,0,0,.06l-1.67,8C190.54,36.35,190.56,36.38,190.61,36.38Z"/><path class="logo-ink" d="M198.49,40.24V26.06a.18.18,0,0,1,.2-.21h3.22a3.27,3.27,0,0,1,2.56,1.06,4,4,0,0,1,1,2.82v6.84a4,4,0,0,1-1,2.82,3.27,3.27,0,0,1-2.56,1.06h-3.22A.18.18,0,0,1,198.49,40.24Zm1.56-1.09,1.83,0a1.73,1.73,0,0,0,1.47-.71,3.14,3.14,0,0,0,.58-1.91V29.79a3.15,3.15,0,0,0-.54-1.94,1.81,1.81,0,0,0-1.51-.7h-1.83c-.06,0-.08,0-.08.08V39.07C200,39.13,200,39.15,200.05,39.15Z"/><path class="logo-ink" d="M208.18,40.24V26.06a.19.19,0,0,1,.21-.21h1.06a.19.19,0,0,1,.21.21V40.24a.19.19,0,0,1-.21.21h-1.06A.19.19,0,0,1,208.18,40.24Z"/><path class="logo-ink" d="M213.3,39.61a3.58,3.58,0,0,1-1-2.64V29.33a3.58,3.58,0,0,1,1-2.64,3.47,3.47,0,0,1,2.6-1,3.43,3.43,0,0,1,3.62,3.64V37a3.56,3.56,0,0,1-1,2.63,3.89,3.89,0,0,1-5.22,0Zm4.15-.92a2.34,2.34,0,0,0,.59-1.64V29.27a2.37,2.37,0,0,0-.59-1.66A2,2,0,0,0,215.9,27a2,2,0,0,0-1.53.63,2.37,2.37,0,0,0-.58,1.66v7.78a2.33,2.33,0,0,0,.58,1.64,2,2,0,0,0,1.53.63A2,2,0,0,0,217.45,38.69Z"/><path class="logo-ink" d="M221.34,34.4v-.87a.19.19,0,0,1,.21-.21h4.77a.19.19,0,0,1,.21.21v.87a.19.19,0,0,1-.21.21h-4.77A.19.19,0,0,1,221.34,34.4Z"/><path class="logo-ink" d="M229.31,39.63a3.57,3.57,0,0,1-1-2.62V29.27a3.56,3.56,0,0,1,1-2.6,3.91,3.91,0,0,1,5.17,0,3.49,3.49,0,0,1,1,2.61v.36c0,.14-.07.2-.21.2l-1.08.07a.19.19,0,0,1-.21-.21v-.52a2.27,2.27,0,0,0-.56-1.59,2,2,0,0,0-1.5-.6,2,2,0,0,0-1.49.6,2.19,2.19,0,0,0-.58,1.59v8a2.19,2.19,0,0,0,.58,1.59,2,2,0,0,0,1.49.6,2,2,0,0,0,1.5-.6,2.27,2.27,0,0,0,.56-1.59v-.52a.19.19,0,0,1,.21-.21l1.08.06a.19.19,0,0,1,.21.21V37a3.54,3.54,0,0,1-1,2.62,3.89,3.89,0,0,1-5.16,0Z"/><path class="logo-ink" d="M238.63,39.61a3.58,3.58,0,0,1-1-2.64V29.33a3.58,3.58,0,0,1,1-2.64,3.91,3.91,0,0,1,5.22,0,3.55,3.55,0,0,1,1,2.64V37a3.56,3.56,0,0,1-1,2.63,3.89,3.89,0,0,1-5.22,0Zm4.15-.92a2.3,2.3,0,0,0,.59-1.64V29.27a2.33,2.33,0,0,0-.59-1.66,2,2,0,0,0-1.55-.63,2,2,0,0,0-1.52.63,2.37,2.37,0,0,0-.59,1.66v7.78a2.34,2.34,0,0,0,.59,1.64,2,2,0,0,0,1.52.63A2,2,0,0,0,242.78,38.69Z"/><path class="logo-ink" d="M247.5,40.24V26.06a.19.19,0,0,1,.21-.21h1.11A.22.22,0,0,1,249,26l4.2,10.51s0,.06.06.06,0,0,0-.06V26.06a.19.19,0,0,1,.21-.21h1a.19.19,0,0,1,.21.21V40.24a.19.19,0,0,1-.21.21h-1.1a.23.23,0,0,1-.23-.17l-4.19-10.51s0-.06-.07-.05a.07.07,0,0,0,0,.07l0,10.45a.19.19,0,0,1-.21.21h-1.06A.19.19,0,0,1,247.5,40.24Z"/><path class="logo-ink" d="M264.39,26.06v.88a.19.19,0,0,1-.21.21h-2.75c-.06,0-.08,0-.08.08v13a.19.19,0,0,1-.21.21h-1.07a.18.18,0,0,1-.2-.21v-13c0-.06,0-.08-.09-.08H257.2a.19.19,0,0,1-.21-.21v-.88a.19.19,0,0,1,.21-.21h7A.19.19,0,0,1,264.39,26.06Z"/><path class="logo-ink" d="M272.19,40.28,270,33.8a.08.08,0,0,0-.08-.07h-1.8c-.05,0-.08,0-.08.09v6.42a.19.19,0,0,1-.21.21h-1.06a.19.19,0,0,1-.21-.21V26a.19.19,0,0,1,.21-.21h3.44a3.08,3.08,0,0,1,2.46,1.11,4.33,4.33,0,0,1,.94,2.89,4.52,4.52,0,0,1-.59,2.36,3.07,3.07,0,0,1-1.58,1.36c-.06,0-.08,0-.06.1l2.27,6.57,0,.08c0,.1-.06.15-.19.15h-1.08A.24.24,0,0,1,272.19,40.28Zm-4.11-13.07v5.25c0,.06,0,.09.08.09H270a1.85,1.85,0,0,0,1.54-.75,3,3,0,0,0,.59-1.94,3.15,3.15,0,0,0-.59-2,1.87,1.87,0,0,0-1.54-.74h-1.88C268.11,27.12,268.08,27.15,268.08,27.21Z"/><path class="logo-ink" d="M276.47,39.61a3.58,3.58,0,0,1-1-2.64V29.33a3.58,3.58,0,0,1,1-2.64,3.91,3.91,0,0,1,5.22,0,3.56,3.56,0,0,1,1,2.64V37a3.57,3.57,0,0,1-1,2.63,3.89,3.89,0,0,1-5.22,0Zm4.15-.92a2.3,2.3,0,0,0,.6-1.64V29.27a2.33,2.33,0,0,0-.6-1.66,2,2,0,0,0-1.55-.63,2,2,0,0,0-1.52.63,2.37,2.37,0,0,0-.59,1.66v7.78a2.34,2.34,0,0,0,.59,1.64,2,2,0,0,0,1.52.63A2,2,0,0,0,280.62,38.69Z"/><path class="logo-ink" d="M285.34,40.24V26.06a.19.19,0,0,1,.21-.21h1.06a.19.19,0,0,1,.21.21v13c0,.06,0,.08.09.08h4.77a.19.19,0,0,1,.21.21v.88a.19.19,0,0,1-.21.21h-6.13A.19.19,0,0,1,285.34,40.24Z"/><path class="logo-ink" d="M293.6,40.24V26.06a.19.19,0,0,1,.21-.21h1.06a.19.19,0,0,1,.21.21v13c0,.06,0,.08.08.08h4.78a.19.19,0,0,1,.21.21v.88a.19.19,0,0,1-.21.21h-6.13A.19.19,0,0,1,293.6,40.24Z"/><path class="logo-ink" d="M308.26,27.15h-4.84c-.06,0-.08,0-.08.08V32.4c0,.05,0,.08.08.08h3a.19.19,0,0,1,.21.21v.9a.19.19,0,0,1-.21.21h-3c-.06,0-.08,0-.08.08v5.19c0,.06,0,.08.08.08h4.84a.18.18,0,0,1,.2.21v.88a.18.18,0,0,1-.2.21h-6.2a.19.19,0,0,1-.21-.21V26.06a.19.19,0,0,1,.21-.21h6.2a.18.18,0,0,1,.2.21v.88A.18.18,0,0,1,308.26,27.15Z"/><path class="logo-ink" d="M310.8,40.24V26.06a.19.19,0,0,1,.21-.21h3.21a3.27,3.27,0,0,1,2.56,1.06,4,4,0,0,1,1,2.82v6.84a4,4,0,0,1-1,2.82,3.27,3.27,0,0,1-2.56,1.06H311A.19.19,0,0,1,310.8,40.24Zm1.56-1.09,1.84,0a1.76,1.76,0,0,0,1.47-.71,3.08,3.08,0,0,0,.57-1.91V29.79a3.15,3.15,0,0,0-.54-1.94,1.78,1.78,0,0,0-1.5-.7h-1.84c-.05,0-.08,0-.08.08V39.07C312.28,39.13,312.31,39.15,312.36,39.15Z"/><path class="logo-ink" d="M180.11,64.65a3.55,3.55,0,0,1-1-2.62V54.29a3.56,3.56,0,0,1,1-2.61,3.47,3.47,0,0,1,2.57-1,3.34,3.34,0,0,1,3.57,3.59v.36a.18.18,0,0,1-.21.2l-1.08.07a.19.19,0,0,1-.21-.21v-.52a2.27,2.27,0,0,0-.56-1.59,2.17,2.17,0,0,0-3,0,2.23,2.23,0,0,0-.57,1.59v8a2.25,2.25,0,0,0,.57,1.59,2.17,2.17,0,0,0,3,0,2.29,2.29,0,0,0,.56-1.59v-.52a.19.19,0,0,1,.21-.21l1.08.06a.19.19,0,0,1,.21.21V62a3.55,3.55,0,0,1-1,2.62,3.48,3.48,0,0,1-2.59,1A3.43,3.43,0,0,1,180.11,64.65Z"/><path class="logo-ink" d="M194.38,65.3l-2.15-6.48a.08.08,0,0,0-.08-.07h-1.79a.08.08,0,0,0-.09.09v6.42a.19.19,0,0,1-.21.21H189a.19.19,0,0,1-.21-.21V51.06a.19.19,0,0,1,.21-.21h3.44A3.05,3.05,0,0,1,194.9,52a4.28,4.28,0,0,1,.94,2.89,4.51,4.51,0,0,1-.58,2.36,3.14,3.14,0,0,1-1.59,1.36.07.07,0,0,0-.06.1l2.27,6.57,0,.08c0,.1-.06.15-.19.15h-1.08A.25.25,0,0,1,194.38,65.3Zm-4.11-13.07v5.25c0,.06,0,.08.09.08h1.87a1.86,1.86,0,0,0,1.55-.74,3.1,3.1,0,0,0,.58-2,3.2,3.2,0,0,0-.58-2,1.89,1.89,0,0,0-1.55-.74h-1.87A.08.08,0,0,0,190.27,52.23Z"/><path class="logo-ink" d="M204.05,65.28l-.52-2.59a.07.07,0,0,0,0-.06l-.07,0h-3.78l-.07,0a.07.07,0,0,0,0,.06L199,65.28a.21.21,0,0,1-.23.19h-1.06a.18.18,0,0,1-.16-.07.15.15,0,0,1,0-.16l3.15-14.18a.21.21,0,0,1,.23-.19h1.25a.2.2,0,0,1,.23.19l3.17,14.18v0a.17.17,0,0,1-.19.19h-1.09A.23.23,0,0,1,204.05,65.28ZM199.9,61.4h3.28s.06,0,.06-.08l-1.65-8s0-.06,0-.06,0,0,0,.06l-1.67,8S199.86,61.4,199.9,61.4Z"/><path class="logo-ink" d="M208.45,65.28,205.7,51.1v0a.17.17,0,0,1,.19-.19H207c.14,0,.22.06.23.19l2,11,0,0s0,0,.05,0l1.68-11c0-.13.1-.19.21-.19h1a.18.18,0,0,1,.21.19l1.77,11,0,0s0,0,.05,0l1.79-11c0-.13.1-.19.21-.19h1.1a.21.21,0,0,1,.16.06.24.24,0,0,1,0,.17L214.9,65.28a.21.21,0,0,1-.23.19h-1a.2.2,0,0,1-.2-.19l-1.76-11a.05.05,0,0,0-.05,0s0,0,0,0l-1.71,11a.19.19,0,0,1-.21.19h-1A.23.23,0,0,1,208.45,65.28Z"/><path class="logo-ink" d="M219.59,65.26V51.08a.18.18,0,0,1,.2-.21h1.07a.19.19,0,0,1,.21.21v13c0,.06,0,.08.08.08h4.77a.19.19,0,0,1,.21.21v.88a.19.19,0,0,1-.21.21h-6.13A.18.18,0,0,1,219.59,65.26Z"/><path class="logo-ink" d="M234.24,52.16h-4.83a.08.08,0,0,0-.09.09v5.17s0,.08.09.08h3a.19.19,0,0,1,.21.21v.9a.19.19,0,0,1-.21.21h-3c-.06,0-.09,0-.09.08v5.19c0,.06,0,.08.09.08h4.83a.19.19,0,0,1,.21.21v.88a.19.19,0,0,1-.21.21h-6.19a.19.19,0,0,1-.21-.21V51.08a.19.19,0,0,1,.21-.21h6.19a.19.19,0,0,1,.21.21V52A.18.18,0,0,1,234.24,52.16Z"/><path class="logo-ink" d="M242.37,65.3l-2.14-6.48a.09.09,0,0,0-.09-.07h-1.79c-.06,0-.08,0-.08.09v6.42a.19.19,0,0,1-.21.21H237c-.14,0-.2-.07-.2-.21V51.06c0-.14.06-.21.2-.21h3.44A3.05,3.05,0,0,1,242.89,52a4.28,4.28,0,0,1,.94,2.89,4.51,4.51,0,0,1-.58,2.36,3.14,3.14,0,0,1-1.59,1.36s-.07,0-.06.1l2.27,6.57,0,.08c0,.1-.07.15-.19.15h-1.09A.26.26,0,0,1,242.37,65.3Zm-4.1-13.07v5.25c0,.06,0,.08.08.08h1.88a1.85,1.85,0,0,0,1.54-.74,3,3,0,0,0,.58-2,3.14,3.14,0,0,0-.58-2,1.87,1.87,0,0,0-1.54-.74h-1.88C238.29,52.14,238.27,52.17,238.27,52.23Z"/><path class="logo-ink" d="M256.55,52.16h-4.79a.08.08,0,0,0-.09.09v5.17s0,.08.09.08h3a.19.19,0,0,1,.21.21v.9a.19.19,0,0,1-.21.21h-3c-.06,0-.09,0-.09.08v6.36a.19.19,0,0,1-.21.21H250.4a.19.19,0,0,1-.21-.21V51.08a.19.19,0,0,1,.21-.21h6.15a.19.19,0,0,1,.21.21V52A.18.18,0,0,1,256.55,52.16Z"/><path class="logo-ink" d="M265,52.16h-4.84c-.06,0-.08,0-.08.09v5.17s0,.08.08.08h3a.19.19,0,0,1,.21.21v.9a.19.19,0,0,1-.21.21h-3c-.06,0-.08,0-.08.08v5.19c0,.06,0,.08.08.08H265a.18.18,0,0,1,.2.21v.88a.18.18,0,0,1-.2.21h-6.2a.19.19,0,0,1-.21-.21V51.08a.19.19,0,0,1,.21-.21H265a.18.18,0,0,1,.2.21V52A.18.18,0,0,1,265,52.16Z"/><path class="logo-ink" d="M267.56,65.26V51.08a.19.19,0,0,1,.21-.21H271a3.3,3.3,0,0,1,2.56,1.05,4.06,4.06,0,0,1,1,2.83v6.84a4,4,0,0,1-1,2.82A3.3,3.3,0,0,1,271,65.47h-3.21A.19.19,0,0,1,267.56,65.26Zm1.56-1.09,1.84,0a1.76,1.76,0,0,0,1.47-.71,3.14,3.14,0,0,0,.57-1.91V54.81a3.15,3.15,0,0,0-.54-1.94,1.79,1.79,0,0,0-1.5-.71h-1.84c-.05,0-.08,0-.08.09V64.09C269,64.15,269.07,64.17,269.12,64.17Z"/><path class="logo-ink" d="M283.51,52.16h-4.84c-.05,0-.08,0-.08.09v5.17a.07.07,0,0,0,.08.08h3.05a.18.18,0,0,1,.2.21v.9a.18.18,0,0,1-.2.21h-3.05c-.05,0-.08,0-.08.08v5.19c0,.06,0,.08.08.08h4.84a.19.19,0,0,1,.21.21v.88a.19.19,0,0,1-.21.21h-6.19a.19.19,0,0,1-.21-.21V51.08a.19.19,0,0,1,.21-.21h6.19a.19.19,0,0,1,.21.21V52A.18.18,0,0,1,283.51,52.16Z"/><path class="logo-ink" d="M291.64,65.3l-2.15-6.48a.08.08,0,0,0-.08-.07h-1.79a.08.08,0,0,0-.09.09v6.42a.19.19,0,0,1-.21.21h-1.06a.19.19,0,0,1-.21-.21V51.06a.19.19,0,0,1,.21-.21h3.44A3.06,3.06,0,0,1,292.16,52a4.28,4.28,0,0,1,.94,2.89,4.61,4.61,0,0,1-.58,2.36,3.14,3.14,0,0,1-1.59,1.36.07.07,0,0,0-.06.1l2.27,6.57,0,.08c0,.1-.06.15-.19.15h-1.08A.24.24,0,0,1,291.64,65.3Zm-4.11-13.07v5.25c0,.06,0,.08.09.08h1.87a1.83,1.83,0,0,0,1.54-.74,3,3,0,0,0,.59-2,3.14,3.14,0,0,0-.59-2,1.86,1.86,0,0,0-1.54-.74h-1.87A.08.08,0,0,0,287.53,52.23Z"/><path class="logo-ink" d="M301.31,65.28l-.52-2.59a.07.07,0,0,0,0-.06l-.07,0h-3.78l-.07,0a.07.07,0,0,0,0,.06l-.54,2.59a.21.21,0,0,1-.23.19H295a.18.18,0,0,1-.16-.07.15.15,0,0,1,0-.16l3.15-14.18a.21.21,0,0,1,.23-.19h1.25a.21.21,0,0,1,.23.19l3.16,14.18v0a.17.17,0,0,1-.18.19h-1.09A.23.23,0,0,1,301.31,65.28Zm-4.15-3.88h3.28s.06,0,.06-.08l-1.65-8s0-.06,0-.06,0,0,0,.06l-1.67,8S297.12,61.4,297.16,61.4Z"/><path class="logo-ink" d="M310.4,51.08V52a.18.18,0,0,1-.21.2h-2.75c-.05,0-.08,0-.08.09v13a.19.19,0,0,1-.21.21h-1.06a.19.19,0,0,1-.21-.21v-13a.08.08,0,0,0-.09-.09h-2.58A.18.18,0,0,1,303,52v-.88a.19.19,0,0,1,.21-.21h7A.19.19,0,0,1,310.4,51.08Z"/><path class="logo-ink" d="M312.61,65.26V51.08a.19.19,0,0,1,.21-.21h1.06a.19.19,0,0,1,.21.21V65.26a.19.19,0,0,1-.21.21h-1.06A.19.19,0,0,1,312.61,65.26Z"/><path class="logo-ink" d="M317.73,64.63a3.59,3.59,0,0,1-1-2.65V54.35a3.58,3.58,0,0,1,1-2.64,3.88,3.88,0,0,1,5.22,0,3.55,3.55,0,0,1,1,2.64V62a3.57,3.57,0,0,1-1,2.64,3.89,3.89,0,0,1-5.22,0Zm4.15-.93a2.27,2.27,0,0,0,.59-1.63V54.29a2.33,2.33,0,0,0-.59-1.66,2,2,0,0,0-1.55-.63,2,2,0,0,0-1.52.63,2.37,2.37,0,0,0-.59,1.66v7.78a2.31,2.31,0,0,0,.59,1.63,1.93,1.93,0,0,0,1.52.64A2,2,0,0,0,321.88,63.7Z"/><path class="logo-ink" d="M326.6,65.26V51.08a.19.19,0,0,1,.21-.21h1.11a.24.24,0,0,1,.23.17l4.19,10.51s0,.06.06.06,0,0,0-.06V51.08a.19.19,0,0,1,.21-.21h1a.19.19,0,0,1,.21.21V65.26a.19.19,0,0,1-.21.21h-1.1a.23.23,0,0,1-.23-.17l-4.19-10.51s0-.06-.07,0a.07.07,0,0,0,0,.07l0,10.45a.19.19,0,0,1-.21.21h-1.06A.19.19,0,0,1,326.6,65.26Z"/><path class="logo-bar" d="M163.17,65.35V1a.84.84,0,0,1,1-.95H169a.84.84,0,0,1,1,1v64.4a.84.84,0,0,1-1,1h-4.83A.84.84,0,0,1,163.17,65.35Z"/></g></g></svg>
+      </a>
+
+      <div class="actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme">
+          <svg class="i-moon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></svg>
+          <svg class="i-sun" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+          <span class="bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+
+        <nav class="menu" id="site-menu" aria-labelledby="menu-title">
+          <p class="menu__title" id="menu-title">Projects</p>
+          <ul>
+            <li><a href="https://getprocrawler.com" target="_blank" rel="noopener noreferrer">PROCRAWLER <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></li>
+            <li><a href="https://linekillazcompz.org" target="_blank" rel="noopener noreferrer">Linekillaz GTC <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></li>
+            <li><a href="https://wrccaworldranking.org" target="_blank" rel="noopener noreferrer">WRCCA World Ranking <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="policy">
+      <article class="policy__inner">
+        <h1 class="policy__title">Privacy Policy</h1>
+        <p class="policy__date">Last updated: 21 October 2026</p>
+
+        <p>This policy explains what personal data is processed when you visit irccf.org or contact us, why, and what rights you have. It is provided under Articles 13 and 14 of the EU General Data Protection Regulation (GDPR).</p>
+
+        <h2>1. Who is responsible</h2>
+        <p>The controller of your personal data is:</p>
+        <p class="policy__address">IRCCF Licensing Ltd.<br>
+          Registered seat: Toldi utca 4, 3066 Kutasó, Hungary<br>
+          Registration number: 12-09-012417 (Company Registry Court of the Balassagyarmat Regional Court)<br>
+          Tax number: 25469118-1-12<br>
+          Email: <a href="mailto:hello@irccf.org">hello@irccf.org</a></p>
+        <p>We have not appointed a data protection officer, as our activities do not require one. For any privacy question, write to the email address above.</p>
+
+        <h2>2. What we process and why</h2>
+
+        <h3>Visiting the website</h3>
+        <p>When you open irccf.org, our hosting provider Cloudflare processes technical data that every website visit involves: your IP address, browser and device type, the page requested, the referring page and the time of the request.</p>
+        <ul>
+          <li><strong>Purpose:</strong> delivering the website to you and protecting it against attacks and abuse.</li>
+          <li><strong>Legal basis:</strong> our legitimate interest in running a secure, working website (GDPR Article 6(1)(f)).</li>
+          <li><strong>Retention:</strong> Cloudflare keeps these logs only for as long as needed for security and operation, under its own retention rules. We do not use them to identify visitors.</li>
+        </ul>
+
+        <h3>Website analytics (only with your consent)</h3>
+        <p>If you click <strong>Accept</strong> in the cookie notice, we use Google Analytics 4 to understand how visitors use the site, for example which pages are viewed and which project links are clicked. Google Analytics then collects a pseudonymous identifier stored in a cookie, the pages you view and links you click, your approximate location (country or city, derived from your IP address, which Google Analytics does not store), your device and browser type, and the page that referred you.</p>
+        <ul>
+          <li><strong>Purpose:</strong> measuring and improving how the website is used.</li>
+          <li><strong>Legal basis:</strong> your consent (GDPR Article 6(1)(a), and Section 155(4) of Hungarian Act C of 2003 on Electronic Communications for storing cookies on your device).</li>
+          <li><strong>Retention:</strong> Google Analytics keeps event-level data for 2 months. The analytics cookies expire after up to 2 years.</li>
+          <li><strong>Withdrawing consent:</strong> click <strong>Cookie settings</strong> at the bottom of any page and choose <strong>Decline</strong> at any time. Analytics stops and its cookies are removed. Withdrawal does not affect processing that happened before it.</li>
+        </ul>
+        <p>Nothing is collected by Google Analytics if you decline or ignore the cookie notice. We do not use analytics data for advertising, and advertising storage and personalisation are switched off.</p>
+
+        <h3>Contacting us by email</h3>
+        <p>If you email us, we process your name, email address and whatever you include in your message.</p>
+        <ul>
+          <li><strong>Purpose:</strong> answering your message and handling your request.</li>
+          <li><strong>Legal basis:</strong> our legitimate interest in replying to enquiries (GDPR Article 6(1)(f)), or taking steps towards or performing a contract with you where your message relates to one (Article 6(1)(b)).</li>
+          <li><strong>Retention:</strong> as long as needed to deal with your request, and no longer than 1 year after our correspondence ends, unless a longer period is required by law, for example accounting rules.</li>
+        </ul>
+
+        <h2>3. Cookies and browser storage</h2>
+        <div class="policy__table">
+          <table>
+            <thead>
+              <tr><th scope="col">Name</th><th scope="col">Set by</th><th scope="col">Purpose</th><th scope="col">Expires</th><th scope="col">Consent</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Distinguishes visitors for statistics</td><td>2 years</td><td>Required</td></tr>
+              <tr><td><code>_ga_&lt;ID&gt;</code></td><td>Google Analytics</td><td>Keeps the state of a visit for statistics</td><td>2 years</td><td>Required</td></tr>
+              <tr><td><code>irccf-consent</code></td><td>irccf.org (browser storage)</td><td>Remembers your cookie choice</td><td>Until you clear browser data</td><td>Not required, strictly necessary</td></tr>
+              <tr><td><code>irccf-theme</code></td><td>irccf.org (browser storage)</td><td>Remembers light or dark mode, only if you use the switch</td><td>Until you clear browser data</td><td>Not required, set at your request</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The two irccf.org entries stay in your browser and are never sent to us. Cloudflare may also set a strictly necessary security cookie (such as <code>cf_clearance</code>) if it has to check that a visitor is human.</p>
+
+        <h2>4. Who receives the data</h2>
+        <p>We use the following service providers, who process data on our behalf under data processing agreements:</p>
+        <ul>
+          <li><strong>Cloudflare, Inc.</strong>, 101 Townsend St, San Francisco, CA 94107, USA: website hosting, content delivery and security.</li>
+          <li><strong>Google Ireland Limited</strong>, Gordon House, Barrow Street, Dublin 4, Ireland, together with Google LLC, USA: website analytics, only with your consent.</li>
+          <li><strong>Our email service provider</strong>: receiving and storing messages sent to hello@irccf.org.</li>
+        </ul>
+        <p>We do not sell personal data or share it with anyone else, except where the law requires us to.</p>
+
+        <h2>5. Transfers outside the EU</h2>
+        <p>Cloudflare and Google may process data in the United States. Both companies are certified under the EU-US Data Privacy Framework, which the European Commission recognised as providing an adequate level of protection in its decision of 10 July 2023. Where needed, the European Commission's Standard Contractual Clauses also apply.</p>
+
+        <h2>6. Your rights</h2>
+        <p>Under the GDPR you have the right to:</p>
+        <ul>
+          <li>get access to the personal data we hold about you (Article 15);</li>
+          <li>have inaccurate data corrected (Article 16);</li>
+          <li>have your data deleted (Article 17);</li>
+          <li>restrict how we process it (Article 18);</li>
+          <li>receive your data in a portable format (Article 20);</li>
+          <li>object to processing based on our legitimate interest (Article 21);</li>
+          <li>withdraw your consent at any time, without affecting earlier processing (Article 7(3)).</li>
+        </ul>
+        <p>To use any of these rights, email <a href="mailto:hello@irccf.org">hello@irccf.org</a>. We reply within one month.</p>
+        <p>If you think we have not handled your data lawfully, you can complain to the Hungarian supervisory authority:</p>
+        <p class="policy__address">Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)<br>
+          1055 Budapest, Falk Miksa utca 9-11, Hungary<br>
+          Postal address: 1363 Budapest, Pf. 9.<br>
+          Phone: +36 1 391 1400<br>
+          Email: <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a><br>
+          Website: <a href="https://www.naih.hu" target="_blank" rel="noopener noreferrer">www.naih.hu</a></p>
+        <p>You can also go to court, or complain to the supervisory authority in the EU country where you live.</p>
+
+        <h2>7. Other information</h2>
+        <p>We do not use your data for automated decision-making or profiling. This website is not directed at children under 16. We may update this policy when our website or the law changes. The date at the top always shows the latest version.</p>
+      </article>
+    </main>
+  </div>
+
+  <footer class="imprint" id="imprint" aria-label="Imprint">
+    <p class="credits">
+      <b>Imprint</b><span class="sep">/</span>Company Name: <span class="v">IRCCF Licensing Ltd.</span><span class="sep">/</span>Registered seat: <span class="v">Toldi utca 4, 3066 Kutasó, Hungary</span><span class="sep">/</span>Registration number: <span class="v">12-09-012417</span> (Company Registry Court of the Balassagyarmat Regional Court)<span class="sep">/</span>Tax number: <span class="v">25469118-1-12</span><span class="sep">/</span>Email: <a href="mailto:hello@irccf.org"><span class="v">hello@irccf.org</span></a><span class="sep">/</span>Hosting provider: <span class="v">Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.</span>
+    </p>
+    <div class="imprint__bar">
+      <p class="imprint__legal"><span>© <span id="year">2026</span> IRCCF Licensing Ltd. All rights reserved.</span><a class="linkish" href="/privacy" aria-current="page">Privacy</a><button class="linkish" type="button" data-consent-open>Cookie settings</button></p>
+      <p><a class="made-by" href="https://webber360.com" target="_blank" rel="noopener noreferrer">// Made by <strong>W360º</strong></a></p>
+    </div>
+  </footer>
+
+  <div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-text">
+    <p class="consent__title" id="consent-title">Cookies</p>
+    <p class="consent__text" id="consent-text">We'd like to use Google Analytics cookies to see how visitors use this site. Nothing is tracked unless you accept. <a href="/privacy">Privacy policy</a></p>
+    <div class="consent__actions">
+      <button class="consent__btn consent__btn--ghost" type="button" data-consent="denied">Decline</button>
+      <button class="consent__btn consent__btn--primary" type="button" data-consent="granted">Accept</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+
+      /* Current year */
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+
+      /* Theme */
+      var toggle = document.querySelector('.theme-toggle');
+      var metaTheme = document.querySelector('meta[name="theme-color"]');
+      function applyTheme(t) {
+        root.setAttribute('data-theme', t);
+        toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        if (metaTheme) metaTheme.setAttribute('content', t === 'dark' ? '#0f0f10' : '#ffffff');
+      }
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+      toggle.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('irccf-theme', next); } catch (e) {}
+        var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!document.startViewTransition || reduce) { applyTheme(next); return; }
+        /* New theme spreads out in a circle from the switch */
+        var r = toggle.getBoundingClientRect();
+        var x = r.left + r.width / 2, y = r.top + r.height / 2;
+        var radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+        var vt = document.startViewTransition(function () { applyTheme(next); });
+        vt.ready.then(function () {
+          root.animate(
+            { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + radius + 'px at ' + x + 'px ' + y + 'px)'] },
+            { duration: 480, easing: 'cubic-bezier(0.23, 1, 0.32, 1)', pseudoElement: '::view-transition-new(root)' }
+          );
+        }).catch(function () {});
+      });
+      if (window.matchMedia) {
+        var mq = matchMedia('(prefers-color-scheme: dark)');
+        var onSystem = function (e) {
+          var stored = null;
+          try { stored = localStorage.getItem('irccf-theme'); } catch (err) {}
+          if (!stored) applyTheme(e.matches ? 'dark' : 'light');
+        };
+        if (mq.addEventListener) mq.addEventListener('change', onSystem);
+      }
+
+      /* Cookie consent + Google Analytics 4 (loads only after "Accept") */
+      var GA_ID = 'G-6512PHVSLV';
+      var KEY = 'irccf-consent';
+      var consentBox = document.getElementById('consent');
+      function readConsent() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+      function saveConsent(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+      var gaLoaded = false;
+      function loadGA() {
+        if (gaLoaded || !GA_ID) return;
+        gaLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { dataLayer.push(arguments); };
+        gtag('consent', 'default', {
+          analytics_storage: 'granted',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
+        });
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+      }
+      function clearGACookies() {
+        var host = location.hostname.replace(/^www\./, '');
+        document.cookie.split(';').forEach(function (c) {
+          var name = c.split('=')[0].trim();
+          if (name === '_ga' || name.indexOf('_ga_') === 0) {
+            ['', '; domain=' + host, '; domain=.' + host].forEach(function (d) {
+              document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+            });
+          }
+        });
+      }
+      function showConsent() {
+        requestAnimationFrame(function () { consentBox.setAttribute('data-show', ''); });
+      }
+      function hideConsent() { consentBox.removeAttribute('data-show'); }
+      consentBox.querySelectorAll('[data-consent]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var v = b.getAttribute('data-consent');
+          saveConsent(v);
+          hideConsent();
+          if (v === 'granted') {
+            loadGA();
+          } else {
+            if (window.gtag) gtag('consent', 'update', { analytics_storage: 'denied' });
+            window['ga-disable-' + GA_ID] = true;
+            clearGACookies();
+          }
+        });
+      });
+      document.querySelectorAll('[data-consent-open]').forEach(function (b) {
+        b.addEventListener('click', showConsent);
+      });
+      var stored = readConsent();
+      if (stored === 'granted') loadGA();
+      else if (stored !== 'denied') setTimeout(showConsent, 900);
+
+      /* Menu */
+      var btn = document.querySelector('.menu-btn');
+      var menu = document.getElementById('site-menu');
+      var links = menu.querySelectorAll('a');
+      function setOpen(open, focusTrigger) {
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        if (open) {
+          menu.setAttribute('data-open', '');
+          links[0].focus({ preventScroll: true });
+        } else {
+          menu.removeAttribute('data-open');
+          if (focusTrigger) btn.focus();
+        }
+      }
+      btn.addEventListener('click', function () { setOpen(btn.getAttribute('aria-expanded') !== 'true', false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.hasAttribute('data-open')) setOpen(false, true);
+      });
+      document.addEventListener('pointerdown', function (e) {
+        if (menu.hasAttribute('data-open') && !menu.contains(e.target) && !btn.contains(e.target)) setOpen(false, false);
+      });
+      menu.addEventListener('focusout', function (e) {
+        if (menu.hasAttribute('data-open') && e.relatedTarget && !menu.contains(e.relatedTarget) && e.relatedTarget !== btn) setOpen(false, false);
+      });
+      links.forEach(function (a) { a.addEventListener('click', function () { setOpen(false, false); }); });
+    })();
+  </script>
+</body>
+</html>

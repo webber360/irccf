@@ -575,6 +575,7 @@
     }
     .consent__title { margin: 0 0 4px; font-size: 14.5px; font-weight: 600; letter-spacing: -.01em; }
     .consent__text { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+    .consent__text a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
     .consent__actions { display: flex; gap: 8px; margin-top: 14px; }
     .consent__btn {
       flex: 1;
@@ -731,14 +732,14 @@
       <b>Imprint</b><span class="sep">/</span>Company Name: <span class="v">IRCCF Licensing Ltd.</span><span class="sep">/</span>Registered seat: <span class="v">Toldi utca 4, 3066 Kutasó, Hungary</span><span class="sep">/</span>Registration number: <span class="v">12-09-012417</span> (Company Registry Court of the Balassagyarmat Regional Court)<span class="sep">/</span>Tax number: <span class="v">25469118-1-12</span><span class="sep">/</span>Email: <a href="mailto:hello@irccf.org"><span class="v">hello@irccf.org</span></a><span class="sep">/</span>Hosting provider: <span class="v">Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.</span>
     </p>
     <div class="imprint__bar">
-      <p class="imprint__legal"><span>© <span id="year">2026</span> IRCCF Licensing Ltd. All rights reserved.</span><button class="linkish" type="button" data-consent-open>Cookie settings</button></p>
+      <p class="imprint__legal"><span>© <span id="year">2026</span> IRCCF Licensing Ltd. All rights reserved.</span><a class="linkish" href="/privacy">Privacy</a><button class="linkish" type="button" data-consent-open>Cookie settings</button></p>
       <p><a class="made-by" href="https://webber360.com" target="_blank" rel="noopener noreferrer">// Made by <strong>W360º</strong></a></p>
     </div>
   </footer>
 
   <div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-text">
     <p class="consent__title" id="consent-title">Cookies</p>
-    <p class="consent__text" id="consent-text">We'd like to use Google Analytics cookies to see how visitors use this site. Nothing is tracked unless you accept.</p>
+    <p class="consent__text" id="consent-text">We'd like to use Google Analytics cookies to see how visitors use this site. Nothing is tracked unless you accept. <a href="/privacy">Privacy policy</a></p>
     <div class="consent__actions">
       <button class="consent__btn consent__btn--ghost" type="button" data-consent="denied">Decline</button>
       <button class="consent__btn consent__btn--primary" type="button" data-consent="granted">Accept</button>
