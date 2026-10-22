@@ -17,6 +17,7 @@ Static HTML, no build step. Deployed as a Cloudflare Worker with static assets f
 - `assets/` - fonts (self-hosted Inter and Rajdhani), images, logos, icons
 - `_headers` - security and caching headers
 - `wrangler.jsonc`, `.assetsignore` - Worker config; repo files are not served
+- `CLAUDE.md` - instructions for Claude Code (design rules, legal content, deploy)
 - `robots.txt`, `sitemap.xml`, `llms.txt` - crawler files
 - `site.webmanifest`, `favicon.*`, `apple-touch-icon.png` - icons
 
