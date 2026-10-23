@@ -1,14 +1,24 @@
+# Security headers for every response.
+# CSP: scripts only from this site, the inline theme script (by hash) and Google Tag Manager
+# (gtag.js loads only after cookie consent). If you edit the inline theme script in any page,
+# recompute its sha256 and replace the hash below, or the theme will stop applying on load.
 /*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-cWxySqodxdi5xm0SGNf+gERfvIw0f7JwNaoVfD9akTg=' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), usb=(), xr-spatial-tracking=(), browsing-topics=()
+  Cross-Origin-Opener-Policy: same-origin
+  X-Permitted-Cross-Domain-Policies: none
 
 /assets/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
 /llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/security.txt
   Content-Type: text/plain; charset=utf-8
 
 /site.webmanifest

@@ -4,13 +4,15 @@ Guidance for Claude Code when working on **irccf.org**, the website of IRCCF (In
 
 ## What this is
 
-A static, hand-written site with **no build step and no dependencies**. Every page is a single HTML file with its CSS and JS inline. Deployed as a **Cloudflare Worker with static assets** (`wrangler.jsonc`). Every push to `main` goes live on https://irccf.org within about a minute, so `main` is production.
+A static, hand-written site with **no build step and no dependencies**. Every page is a single HTML file with its CSS inline. All JavaScript lives in `assets/js/site.js`, except one tiny inline theme script per page. Deployed as a **Cloudflare Worker with static assets** (`wrangler.jsonc`). Every push to `main` goes live on https://irccf.org within about a minute, so `main` is production.
 
 | File | Role |
 | --- | --- |
 | `index.html` | The one-screen home page (hero, projects, imprint) |
 | `privacy.html` | GDPR privacy policy, served at `/privacy` |
 | `404.html` | Branded not-found page (`not_found_handling: "404-page"`) |
+| `assets/js/site.js` | The only site script, shared by all pages: year, theme switch, cookie consent + GA4, menu. Every block tolerates missing elements |
+| `.well-known/security.txt` | Security contact (RFC 9116). **Renew `Expires` before 2027-10-23** |
 | `assets/fonts/` | Self-hosted `inter-latin-wght.woff2` (variable) and `rajdhani-latin-700.woff2` |
 | `assets/img/` | Hero photo (`hero.jpg`, `hero-1080.jpg`, `hero-1080.webp`, `hero-1920.webp`), `og-image.jpg` (1200×630 share card), `irccf-logo.png` (logo for structured data) |
 | `assets/logos/` | White project logos on transparent: `procrawler.svg`, `linekillaz-gtc.svg`, `wrcca-world-ranking.svg` |
@@ -22,9 +24,9 @@ A static, hand-written site with **no build step and no dependencies**. Every pa
 
 ## Shared code is duplicated, keep it in sync
 
-There is no templating. `index.html`, `privacy.html` and `404.html` each carry their own copy of the `<style>` block, the header (IRCCF logo, theme switch, menu), and the footer. `privacy.html` also has the imprint, cookie notice and consent/GA script.
+There is no templating. `index.html`, `privacy.html` and `404.html` each carry their own copy of the `<style>` block, the header (IRCCF logo, theme switch, menu) and the footer. `privacy.html` also has the imprint and the cookie notice markup.
 
-When you change a token, the header, the footer, the imprint, the cookie notice or the consent script in `index.html`, make the **same change in `privacy.html`** (and `404.html` where it applies). `privacy.html` uses root-absolute paths (`/assets/...`, `/favicon.ico`) because it is served at `/privacy`. Keep them that way.
+When you change a token, the header, the footer, the imprint or the cookie notice in `index.html`, make the **same change in `privacy.html`** (and `404.html` where it applies). `privacy.html` uses root-absolute paths (`/assets/...`, `/favicon.ico`) because it is served at `/privacy`. Keep them that way.
 
 ## Design rules (agreed with the owner, do not drift)
 
@@ -45,6 +47,18 @@ When you change a token, the header, the footer, the imprint, the cookie notice 
 - **Cookie consent:** Google Analytics 4 (`G-6512PHVSLV`) loads **only after Accept**. The choice is stored in `localStorage` as `irccf-consent`. Ad storage, ad user data and ad personalisation are always denied. Declining deletes `_ga` cookies. The footer has "Privacy" and "Cookie settings" links. Never load gtag.js unconditionally.
 - **Privacy policy** (`privacy.html`): names the processors Cloudflare, Google Ireland, and Websupport Magyarország Kft. (Fehérvári út 97-99., 1119 Budapest, registration number 01-09-381419). The NAIH contact details are verified.
 - **Anything new that collects personal data** (form, newsletter, video embed, chat, new analytics or tracking) needs, before it ships: an update to `privacy.html` (bump "Last updated"), a consent gate if it sets non-essential cookies, and a note to the owner to update the Record of Processing Activities (kept outside this repo).
+
+## Security (keep the Content Security Policy intact)
+
+`_headers` sends a strict CSP plus HSTS (2 years), `X-Frame-Options: DENY`, `nosniff`, `Referrer-Policy`, `Permissions-Policy` and `COOP`. The CSP allows scripts only from this site, Google Tag Manager, and the inline theme script by its sha256 hash. Rules:
+
+- **No new inline `<script>` blocks and no `on*=""` event attributes.** Put code in `assets/js/site.js`. `<script type="application/ld+json">` data blocks are fine.
+- **The inline theme script in `<head>` must stay byte-identical in all three pages.** If you change it, recompute the hash and update `_headers`:
+  `python3 -c "import re,hashlib,base64;s=re.findall(r'<script>(.*?)</script>',open('index.html').read(),re.S)[0];print('sha256-'+base64.b64encode(hashlib.sha256(s.encode()).digest()).decode())"`
+- **After editing `site.js`, bump `?v=` on its `<script src>` in all three pages** (assets are cached for 7 days).
+- **New third-party resources** (fonts, embeds, scripts, APIs) must be added to the matching CSP directive and to the privacy policy. Prefer self-hosting. Never add `'unsafe-eval'` or `'unsafe-inline'` to `script-src`.
+- External links opening in a new tab keep `rel="noopener noreferrer"`.
+- Test CSP changes locally by injecting the header (for example with Playwright) before pushing. A CSP mistake breaks the live site immediately.
 
 ## SEO / GEO
 

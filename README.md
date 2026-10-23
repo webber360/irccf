@@ -14,7 +14,8 @@ Static HTML, no build step. Deployed as a Cloudflare Worker with static assets f
 
 - `index.html` - the page (styles and scripts inline)
 - `404.html` - not-found page
-- `assets/` - fonts (self-hosted Inter and Rajdhani), images, logos, icons
+- `assets/` - fonts (self-hosted Inter and Rajdhani), images, logos, icons, `js/site.js` (the site script)
+- `.well-known/security.txt` - security contact
 - `_headers` - security and caching headers
 - `wrangler.jsonc`, `.assetsignore` - Worker config; repo files are not served
 - `CLAUDE.md` - instructions for Claude Code (design rules, legal content, deploy)

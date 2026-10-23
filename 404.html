@@ -6,33 +6,19 @@
   <title>Page not found · IRCCF</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#ffffff">
-  <script>
-    /* Google Analytics 4: only if the visitor accepted cookies on the home page */
-    (function () {
-      var c = null;
-      try { c = localStorage.getItem('irccf-consent'); } catch (e) {}
-      if (c !== 'granted') return;
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { dataLayer.push(arguments); };
-      gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-      gtag('js', new Date());
-      gtag('config', 'G-6512PHVSLV');
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6512PHVSLV';
-      document.head.appendChild(s);
-    })();
-  </script>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script>
     (function () {
       var t = null;
       try { t = localStorage.getItem('irccf-theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
+  <script src="/assets/js/site.js?v=1" defer></script>
   <style>
     /* ---------- Fonts (self-hosted) ---------- */
     @font-face {

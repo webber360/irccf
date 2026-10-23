@@ -1,0 +1,4 @@
+Contact: mailto:hello@irccf.org
+Expires: 2027-10-23T00:00:00.000Z
+Preferred-Languages: en, hu
+Canonical: https://irccf.org/.well-known/security.txt
