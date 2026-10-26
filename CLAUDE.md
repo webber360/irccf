@@ -2,6 +2,8 @@
 
 Guidance for Claude Code when working on **irccf.org**, the website of IRCCF (International Radio Controlled Crawler Federation). A W360º in-house project. Owner: Pierre (W360º, hello@webber360.com).
 
+**Read `docs/PROJECT-NOTES.md` at the start of a session.** It holds the history: where everything lives outside the repo, why decisions were made (and what was tried and rejected), and the open items. Add an entry to its decision log when you make a decision the owner should not have to explain again.
+
 ## What this is
 
 A static, hand-written site with **no build step and no dependencies**. Every page is a single HTML file with its CSS inline. All JavaScript lives in `assets/js/site.js`, except one tiny inline theme script per page. Deployed as a **Cloudflare Worker with static assets** (`wrangler.jsonc`). Every push to `main` goes live on https://irccf.org within about a minute, so `main` is production.
