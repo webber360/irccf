@@ -23,6 +23,7 @@ Newest first.
 
 | Date | Decision | Why |
 | --- | --- | --- |
+| 2026-10-26 | DNSSEC on (Cloudflare signs, DS at Websupport); minimum TLS 1.2; DKIM and DMARC `p=quarantine`; registrar transfer lock, 2FA and auto-renew | Hardening the accounts and DNS around the site after the 2026-10-23 audit. DMARC starts at quarantine so a misconfigured sender is not silently rejected |
 | 2026-10-23 | Strict CSP, all JS moved to `assets/js/site.js`, theme script inline by hash; HSTS 2 years, COOP, wide Permissions-Policy; `security.txt` | Security audit. Static site with no backend, so the remaining risks are injection and the accounts around it |
 | 2026-10-22 | Development moves to Claude Code; `CLAUDE.md` added | Owner's choice |
 | 2026-10-21 | Imprint lists Cloudflare's email `abuse@cloudflare.com` | Hungarian Ekertv. Section 4 requires the hosting provider's email. Cloudflare publishes no general contact address, so the abuse address is the common choice |
@@ -43,11 +44,13 @@ Newest first.
 
 ## Open items
 
-- [ ] **DNSSEC**: DS record added at Websupport on 26 Oct 2026 (key tag 2371, algorithm 13, SHA-256). Confirm Cloudflare's DNSSEC panel shows "Success", then check with internet.nl.
-- [ ] **Email authentication for irccf.org**: SPF (Websupport's), DKIM (enable in Websupport, add the record in Cloudflare DNS), DMARC starting at `p=quarantine`, later `p=reject`.
-- [ ] **Cloudflare TLS**: minimum TLS 1.2, TLS 1.3 on, Automatic HTTPS Rewrites.
+- [x] **DNSSEC**: DS record added at Websupport on 26 Oct 2026 (key tag 2371, algorithm 13, SHA-256). Verified 26 Oct 2026: DS is in the `.org` zone and matches the DNSKEY; Google (8.8.8.8) and Quad9 (9.9.9.9) return validated answers. Cloudflare's 1.1.1.1 did not set the AD flag yet (likely a cached pre-DS answer); recheck with internet.nl.
+- [x] **Email authentication for irccf.org**: DKIM enabled in Websupport, record at `mail._domainkey`; DMARC `p=quarantine` with reports to hello@irccf.org (verified 26 Oct 2026).
+- [ ] **SPF**: the record ends in `?all` (neutral), which gives receivers no instruction. Change it to `~all` in Cloudflare DNS, and to `-all` when DMARC moves to `p=reject`. The second record (`spf2.0/pra ...`, Sender ID) is obsolete and can be removed.
+- [ ] **DMARC**: move from `p=quarantine` to `p=reject` once the reports show only legitimate senders passing.
+- [x] **Cloudflare TLS**: minimum TLS 1.2, TLS 1.3 on, Automatic HTTPS Rewrites. Verified 26 Oct 2026: TLS 1.0/1.1 refused, 1.2 and 1.3 accepted.
 - [ ] **GitHub**: block force-push and deletion on `main`; Cloudflare's GitHub app limited to this repo.
-- [ ] **Registrar (Websupport)**: transfer lock, two-factor login, auto-renew.
+- [x] **Registrar (Websupport)**: transfer lock, two-factor login, auto-renew (done by the owner, 26 Oct 2026).
 - [ ] **Search Console**: "Duplicate without user-selected canonical" on `https://irccf.org/` came from a 13 Oct 2026 crawl of the old site. Request indexing and "Validate fix"; the current page has a correct canonical.
 - [ ] **Verify** with securityheaders.com and internet.nl (website + email) after the items above.
 - [ ] Later, optional: HSTS preload (hard to undo), CAA records.
