@@ -23,7 +23,8 @@ Newest first.
 
 | Date | Decision | Why |
 | --- | --- | --- |
-| 2026-11-08 | `_headers` sends `X-Robots-Tag: noindex` on `*.workers.dev` hosts only (host-placeholder rules); irccf.org stays indexable | The workers.dev URL serves the same pages with a 200 and was indexable, a duplicate of irccf.org. A header rule keeps the URL working (handy for checks) without competing in search. Alternative: turn the workers.dev route off in the Worker's Settings, Domains & Routes |
+| 2026-11-08 | `.env` (local Cloudflare API token for Wrangler, git-excluded) added to `.assetsignore` | Assets directory is the repo root, so a local `wrangler deploy` could otherwise publish the token |
+| 2026-11-08 | `_headers` sends `X-Robots-Tag: noindex` on `*.workers.dev` hosts only (host-placeholder rules); irccf.org stays indexable | The workers.dev URL serves the same pages with a 200 and was indexable, a duplicate of irccf.org. A header rule keeps the URL working (handy for checks) without competing in search. Address: `irccforg.proud-tooth-58ee.workers.dev` (previews on). Alternative: turn the workers.dev route off in the Worker's Settings, Domains & Routes |
 | 2026-10-26 | DNSSEC on (Cloudflare signs, DS at Websupport); minimum TLS 1.2; DKIM and DMARC `p=quarantine`; registrar transfer lock, 2FA and auto-renew | Hardening the accounts and DNS around the site after the 2026-10-23 audit. DMARC starts at quarantine so a misconfigured sender is not silently rejected |
 | 2026-10-23 | Strict CSP, all JS moved to `assets/js/site.js`, theme script inline by hash; HSTS 2 years, COOP, wide Permissions-Policy; `security.txt` | Security audit. Static site with no backend, so the remaining risks are injection and the accounts around it |
 | 2026-10-22 | Development moves to Claude Code; `CLAUDE.md` added | Owner's choice |

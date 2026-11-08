@@ -7,3 +7,5 @@ wrangler.jsonc
 node_modules
 .DS_Store
 docs
+.env
+.dev.vars
