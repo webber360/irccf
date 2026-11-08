@@ -12,6 +12,14 @@
   Cross-Origin-Opener-Policy: same-origin
   X-Permitted-Cross-Domain-Policies: none
 
+# Keep the workers.dev copy of the site (and its preview URLs) out of search indexes.
+# These rules match only *.workers.dev hosts, so irccf.org stays indexable.
+https://:worker.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:worker.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex
+
 /assets/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
