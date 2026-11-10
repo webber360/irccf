@@ -63,11 +63,11 @@ When you change a token, the `--consent-*` variables, the header, the footer or 
 - External links opening in a new tab keep `rel="noopener noreferrer"`.
 - Test CSP changes locally by injecting the header (for example with Playwright) before pushing. A CSP mistake breaks the live site immediately.
 
-## Cookie consent (@webber360/consent v1.2.0)
+## Cookie consent (@webber360/consent v1.3.0)
 
 This is a plain HTML site with no build, so the package is installed the "any other HTML site" way, driven by one script:
 
-- **Release file:** `vendor/webber360-consent-1.2.0.tgz`, the GitHub release asset (`gh release download v1.2.0 -R webber360/consent -p 'webber360-consent-1.2.0.tgz' -D vendor`), committed, not served.
+- **Release file:** `vendor/webber360-consent-1.3.0.tgz`, the GitHub release asset (`gh release download v1.3.0 -R webber360/consent -p 'webber360-consent-1.3.0.tgz' -D vendor`), committed, not served.
 - **Config:** `consent.config.json` (site name, privacy URL, `version`, the GA4 ID, the Cloudflare Web Analytics token, the English text overrides). Tag IDs are hard-coded here. Cloudflare's own Web Analytics auto-install must stay **off** (dashboard: Analytics & Logs, Web Analytics), or the beacon would load without consent.
 - **`python3 scripts/consent-sync.py`** unpacks `consent.min.js`/`consent.min.css` into `assets/consent/<v>/`, writes the consent blocks into all three pages (head script inline right after `<meta charset>`, config + popup script before `</body>`) and puts the head script's sha256 into the CSP in `_headers`. Run it after changing the config or the release file. `--check` fails if anything is out of date; run it before every push.
 - Never copy or patch the package code here, and never override `.w360c` classes. The design is set only with the `--consent-*` variables in each page's `<style>` (mapped to the site tokens). The overlay and blur behind both windows are part of the banner design: never override `--consent-backdrop`, `--consent-scrim` or `--consent-backdrop-blur`. Anything the variables can't do is a feature request for the webber360/consent repo (open requests are in `docs/PROJECT-NOTES.md`).
