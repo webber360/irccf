@@ -6,8 +6,8 @@
   "cloudflareAnalytics": "c084f5b4e2ed42f09913a2680a432ce2",
   "texts": {
     "en": {
-      "title": "Cookies",
-      "text": "We'd like to use Google Analytics cookies and Cloudflare Web Analytics to see how visitors use this site. Nothing is tracked unless you accept.",
+      "title": "Help us build a better IRCCF",
+      "text": "With your OK, we use Google Analytics and Cloudflare Web Analytics to see what crawler fans find useful here, so we can make irccf.org better. Nothing is tracked unless you accept, and you can change your mind any time in Cookie settings.",
       "rejectAll": "Decline",
       "acceptAll": "Accept",
       "privacyLink": "Privacy policy"
