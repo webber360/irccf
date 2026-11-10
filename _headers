@@ -1,12 +1,12 @@
 # Security headers for every response.
-# CSP: scripts only from this site, two inline scripts by hash and Google Tag Manager
-# (gtag.js loads only after cookie consent).
+# CSP: scripts only from this site, two inline scripts by hash, Google Tag Manager and
+# Cloudflare Web Analytics (both load only after cookie consent, via @webber360/consent).
 #  - 1st hash: the inline theme script. If you edit it in any page, recompute its sha256 and
 #    replace it below, or the theme will stop applying on load.
 #  - 2nd hash: the @webber360/consent head script. Never edit it by hand:
 #    python3 scripts/consent-sync.py writes it.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-cWxySqodxdi5xm0SGNf+gERfvIw0f7JwNaoVfD9akTg=' 'sha256-iLAAZkq0mCLyi9UDFrQngF3YpKpl/WFmshue9cKMkQo=' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-cWxySqodxdi5xm0SGNf+gERfvIw0f7JwNaoVfD9akTg=' 'sha256-iLAAZkq0mCLyi9UDFrQngF3YpKpl/WFmshue9cKMkQo=' https://*.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://cloudflareinsights.com; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=63072000; includeSubDomains
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

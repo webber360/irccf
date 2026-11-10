@@ -3,10 +3,11 @@
   "privacyUrl": "/privacy",
   "version": 1,
   "ga4": "G-6512PHVSLV",
+  "cloudflareAnalytics": "c084f5b4e2ed42f09913a2680a432ce2",
   "texts": {
     "en": {
       "title": "Cookies",
-      "text": "We'd like to use Google Analytics cookies to see how visitors use this site. Nothing is tracked unless you accept.",
+      "text": "We'd like to use Google Analytics cookies and Cloudflare Web Analytics to see how visitors use this site. Nothing is tracked unless you accept.",
       "rejectAll": "Decline",
       "acceptAll": "Accept",
       "privacyLink": "Privacy policy"
