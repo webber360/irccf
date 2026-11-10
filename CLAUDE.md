@@ -53,7 +53,7 @@ When you change a token, the `--consent-*` variables, the header, the footer or 
 
 ## Security (keep the Content Security Policy intact)
 
-`_headers` sends a strict CSP plus HSTS (2 years), `X-Frame-Options: DENY`, `nosniff`, `Referrer-Policy`, `Permissions-Policy` and `COOP`. The CSP allows scripts only from this site, Google Tag Manager, and the inline theme script by its sha256 hash. Rules:
+`_headers` sends a strict CSP plus HSTS (2 years), `X-Frame-Options: DENY`, `nosniff`, `Referrer-Policy` and `Permissions-Policy`. No `Cross-Origin-Opener-Policy`: `same-origin` cuts the window link Google Tag Assistant needs (it reports the debug window as closed), so it was removed on 2026-11-10. Don't add it back. The CSP allows scripts only from this site, Google Tag Manager, and the inline theme script by its sha256 hash. Rules:
 
 - **No new inline `<script>` blocks and no `on*=""` event attributes.** Put code in `assets/js/site.js`. `<script type="application/ld+json">` and `type="application/json"` data blocks are fine. The only inline scripts are the theme script and the consent head script, both allowed by hash.
 - **The inline theme script in `<head>` must stay byte-identical in all three pages.** If you change it, recompute the hash and update `_headers`:
