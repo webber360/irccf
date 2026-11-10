@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- consent:head -->
+  <script data-w360-consent="{&quot;siteName&quot;:&quot;IRCCF&quot;,&quot;privacyUrl&quot;:&quot;/privacy&quot;,&quot;version&quot;:1,&quot;ga4&quot;:&quot;G-6512PHVSLV&quot;}">"use strict";(()=>{var s=["analytics","marketing","functional"],y=/^G-[A-Z0-9]+$/,w=/^AW-\d+$/,C=/^GTM-[A-Z0-9]+$/,d={analytics:["^_ga","^_gid$","^_gat","^_dc_gtm_"],marketing:["^_gcl","^_gac","^_fbp$","^_fbc$"],functional:[]};function l(t){let e=y.test(t.ga4??"")?t.ga4:"",n=w.test(t.googleAds??"")?t.googleAds:"",o=C.test(t.gtm?.id??"")?t.gtm.id:"",a=/^[a-f0-9]{32}$/i.test(t.cloudflareAnalytics??"")?t.cloudflareAnalytics:"",r=t.categories?.filter(i=>s.includes(i))??s.filter(i=>i==="analytics"&&!!(e||o||a)||i==="marketing"&&!!(n||o)),c={...d};for(let i of s)c[i]=[...d[i],...t.cookiePatterns?.[i]??[]];return{v:Math.max(1,Math.floor(t.version??1)),name:/^[A-Za-z0-9_-]+$/.test(t.cookieName??"")?t.cookieName:"w360_consent",maxAge:Math.round((t.maxAgeDays??180)*86400),cats:r,ga4:e,ads:n,gtm:o,gtmMode:t.gtm?.mode==="advanced"?"advanced":"after-consent",cf:a,redact:t.adsDataRedaction??!0,wait:t.waitForUpdate??500,patterns:c}}var _=/^(\d+)\.(\d+)\.([01])\.([01])(?:\.([01]))?$/,m={analytics:!1,marketing:!1,functional:!1};function u(t,e,n=Date.now()){let o=t.split("; ").find(r=>r.startsWith(`${e.name}=`))?.slice(e.name.length+1),a=o?_.exec(o):null;return!a||Number(a[1])!==e.v||n/1e3-Number(a[2])>=e.maxAge?null:{analytics:a[3]==="1",marketing:a[4]==="1",functional:a[5]==="1"}}function g(t,e){let n=a=>a?"granted":"denied",o=e.includes("functional")?t.functional:!0;return{analytics_storage:n(t.analytics),ad_storage:n(t.marketing),ad_user_data:n(t.marketing),ad_personalization:n(t.marketing),functionality_storage:n(o),personalization_storage:n(o),security_storage:"granted"}}function v(){window.dataLayer=window.dataLayer||[],window.gtag=window.gtag||function(){window.dataLayer.push(arguments)}}function h(t){if(document.querySelector(`script[src*="gtm.js?id=${t}"]`))return;window.dataLayer.push({"gtm.start":Date.now(),event:"gtm.js"});let e=document.createElement("script");e.async=!0,e.src=`https://www.googletagmanager.com/gtm.js?id=${t}`,document.head.append(e)}function f(t){v(),window.gtag("consent","default",{...g(m,t.cats),wait_for_update:t.wait}),t.redact&&window.gtag("set","ads_data_redaction",!0);let e=u(document.cookie,t);e&&(window.__consent=e,window.gtag("consent","update",g(e,t.cats))),t.gtm&&t.gtmMode==="advanced"&&h(t.gtm),window.__w360Head=!0}var x=document.currentScript,p=JSON.parse(x?.getAttribute("data-w360-consent")||"null");p&&f(l(p));})();</script>
+  <!-- /consent:head -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>IRCCF · International Radio Controlled Crawler Federation</title>
   <meta name="description" content="IRCCF, the International Radio Controlled Crawler Federation. Serving pro rock crawler R/C since 2019 with PROCRAWLER, Linekillaz GTC and the WRCCA World Ranking.">
@@ -545,55 +548,42 @@
       .credits a:hover .v { text-decoration-color: currentColor; }
     }
 
-    /* ---------- Cookie consent ---------- */
+    /* ---------- "Cookie settings" footer link ---------- */
     .linkish {
       appearance: none; background: none; border: 0; padding: 0; margin: 0;
       font: inherit; color: inherit; cursor: pointer;
       text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px;
       transition: color 160ms ease, text-decoration-color 160ms ease;
     }
-    .consent {
-      position: fixed;
-      z-index: 40;
-      right: calc(var(--gutter) + 12px + env(safe-area-inset-right, 0px));
-      bottom: calc(var(--gutter) + 12px + env(safe-area-inset-bottom, 0px));
-      width: min(380px, calc(100vw - 2 * var(--gutter) - 24px));
-      padding: 18px 18px 16px;
-      border-radius: var(--radius);
-      background: var(--surface);
-      color: var(--ink);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      opacity: 0;
-      transform: translateY(10px);
-      visibility: hidden;
-      transition: opacity 160ms ease, transform 160ms var(--ease-out), visibility 0s linear 160ms, background-color 240ms ease;
-    }
-    .consent[data-show] {
-      opacity: 1; transform: none; visibility: visible;
-      transition: opacity 260ms var(--ease-out), transform 300ms var(--ease-out), visibility 0s, background-color 240ms ease;
-    }
-    .consent__title { margin: 0 0 4px; font-size: 14.5px; font-weight: 600; letter-spacing: -.01em; }
-    .consent__text { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
-    .consent__text a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-    .consent__actions { display: flex; gap: 8px; margin-top: 14px; }
-    .consent__btn {
-      flex: 1;
-      height: 38px;
-      border-radius: var(--radius);
-      font: inherit; font-size: 14px; font-weight: 600;
-      cursor: pointer;
-      transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .consent__btn:active { transform: scale(.97); }
-    .consent__btn--primary { background: var(--control-bg); color: var(--control-fg); border: 1px solid transparent; }
-    .consent__btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
     @media (hover: hover) and (pointer: fine) {
-      .consent__btn--ghost:hover { background: var(--hover); }
       .linkish:hover { color: var(--ink); text-decoration-color: currentColor; }
     }
-    @media (prefers-reduced-motion: reduce) { .consent { transform: none; } }
+    /* ---------- Cookie consent (@webber360/consent) ----------
+       Themed only through the package's --consent-* variables, mapped to the site tokens
+       (dark mode follows because the tokens switch). No dimming or blur behind the windows. */
+    :root {
+      --consent-font: var(--font-text);
+      --consent-heading-font: var(--font-text);
+      --consent-bg: var(--surface);
+      --consent-text: var(--ink);
+      --consent-muted: var(--muted);
+      --consent-border: var(--line);
+      --consent-surface-2: var(--hover);
+      --consent-accent: var(--control-bg);
+      --consent-accent-text: var(--control-fg);
+      --consent-accent-hover: var(--control-bg);
+      --consent-strong-bg: var(--control-bg);
+      --consent-strong-text: var(--control-fg);
+      --consent-strong-hover: var(--control-bg);
+      --consent-radius: var(--radius);
+      --consent-btn-radius: var(--radius);
+      --consent-shadow: var(--shadow);
+      --consent-focus: var(--focus);
+      --consent-title-leading: 1.25;
+      --consent-backdrop: transparent;
+      --consent-scrim: transparent;
+      --consent-backdrop-blur: 0px;
+    }
 
     /* ---------- Small screens ---------- */
     @media (max-width: 760px) {
@@ -737,15 +727,12 @@
     </div>
   </footer>
 
-  <div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-text">
-    <p class="consent__title" id="consent-title">Cookies</p>
-    <p class="consent__text" id="consent-text">We'd like to use Google Analytics cookies to see how visitors use this site. Nothing is tracked unless you accept. <a href="/privacy">Privacy policy</a></p>
-    <div class="consent__actions">
-      <button class="consent__btn consent__btn--ghost" type="button" data-consent="denied">Decline</button>
-      <button class="consent__btn consent__btn--primary" type="button" data-consent="granted">Accept</button>
-    </div>
-  </div>
 
-  <script src="/assets/js/site.js?v=1" defer></script>
+  <script src="/assets/js/site.js?v=2" defer></script>
+  <!-- consent:body -->
+  <link rel="stylesheet" href="/assets/consent/1.2.0/consent.min.css">
+  <script type="application/json" id="w360-consent-config">{"siteName":"IRCCF","privacyUrl":"/privacy","version":1,"ga4":"G-6512PHVSLV","texts":{"en":{"title":"Cookies","text":"We'd like to use Google Analytics cookies to see how visitors use this site. Nothing is tracked unless you accept.","rejectAll":"Decline","acceptAll":"Accept","privacyLink":"Privacy policy"}}}</script>
+  <script src="/assets/consent/1.2.0/consent.min.js" defer></script>
+  <!-- /consent:body -->
 </body>
 </html>

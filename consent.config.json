@@ -1,0 +1,15 @@
+{
+  "siteName": "IRCCF",
+  "privacyUrl": "/privacy",
+  "version": 1,
+  "ga4": "G-6512PHVSLV",
+  "texts": {
+    "en": {
+      "title": "Cookies",
+      "text": "We'd like to use Google Analytics cookies to see how visitors use this site. Nothing is tracked unless you accept.",
+      "rejectAll": "Decline",
+      "acceptAll": "Accept",
+      "privacyLink": "Privacy policy"
+    }
+  }
+}

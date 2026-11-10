@@ -23,6 +23,8 @@ Newest first.
 
 | Date | Decision | Why |
 | --- | --- | --- |
+| 2026-11-10 | Built-in consent banner (site.js + inline card) replaced by `@webber360/consent` v1.2.0, installed via `vendor/` tgz + `scripts/consent-sync.py` (no build step). Choice moves from `localStorage` `irccf-consent` to cookie `w360_consent`: everyone is asked once, and site.js deletes the old key. Package also runs on 404 so GA4 keeps working there for consenting visitors | Shared W360 consent with proper Consent Mode v2 defaults and per-category preferences. The old choice was not in the package's cookie format, so it could not be carried over. A sync script keeps the site free of npm/builds and puts the head script hash in the CSP |
+| 2026-11-10 | Consent design: only `--consent-*` variables mapped to site tokens (Inter, `--surface`/`--ink`/`--muted`, Accept = `--control-bg`, 5px radius, `--focus` ring); backdrop, scrim and blur off; old wording (Cookies / Decline / Accept) via text overrides | Owner: align with the site design standard. The old banner had no dimming. Remaining differences vs the old corner card are listed under Open items as package feature requests |
 | 2026-11-08 | `.env` (local Cloudflare API token for Wrangler, git-excluded) added to `.assetsignore` | Assets directory is the repo root, so a local `wrangler deploy` could otherwise publish the token |
 | 2026-11-08 | `_headers` sends `X-Robots-Tag: noindex` on `*.workers.dev` hosts only (host-placeholder rules); irccf.org stays indexable | The workers.dev URL serves the same pages with a 200 and was indexable, a duplicate of irccf.org. A header rule keeps the URL working (handy for checks) without competing in search. Address: `irccforg.proud-tooth-58ee.workers.dev` (previews on). Alternative: turn the workers.dev route off in the Worker's Settings, Domains & Routes |
 | 2026-10-26 | DNSSEC on (Cloudflare signs, DS at Websupport); minimum TLS 1.2; DKIM and DMARC `p=quarantine`; registrar transfer lock, 2FA and auto-renew | Hardening the accounts and DNS around the site after the 2026-10-23 audit. DMARC starts at quarantine so a misconfigured sender is not silently rejected |
@@ -56,6 +58,11 @@ Newest first.
 - [ ] **Search Console**: "Duplicate without user-selected canonical" on `https://irccf.org/` came from a 13 Oct 2026 crawl of the old site. Request indexing and "Validate fix"; the current page has a correct canonical.
 - [ ] **Verify** with securityheaders.com and internet.nl (website + email) after the items above.
 - [ ] Later, optional: HSTS preload (hard to undo), CAA records.
+
+- [ ] **Consent: feature requests for webber360/consent** (things the `--consent-*` variables can't match from the old corner card): (1) a non-modal corner layout option and a width variable; (2) `--consent-reject-border` (Decline's outline is fixed to the text colour; the old one used the faint line colour); (3) title size/weight and text-alignment variables (old: 14.5px/600, left-aligned); (4) show-delay and slide-up motion options (old: 900 ms delay, 10px rise); (5) an optional privacy link in the first popup text (old text ended with "Privacy policy"; it is now only in Cookie settings).
+- [ ] **Consent release file**: `vendor/webber360-consent-1.2.0.tgz` was built from the clean `v1.2.0` tag (`npm run build && npm pack`), as `gh` was not available. Swap in the GitHub release asset (`gh release download v1.2.0 -R webber360/consent -p 'webber360-consent-1.2.0.tgz' -D vendor`) and rerun `python3 scripts/consent-sync.py`.
+- [ ] **Cloudflare Web Analytics**: enabled for the zone with auto-install (EU visitors excluded), token `c084f5b4e2ed42f09913a2680a432ce2`. Not in the site code; if Cloudflare injects it, the CSP blocks it, so it most likely collects nothing. Decide: turn it off (recommended) or move it into `consent.config.json` as `cloudflareAnalytics` (Analytics consent) and allow its hosts in the CSP + privacy policy.
+- [ ] **Record of Processing Activities**: note that the consent record is now the `w360_consent` cookie (6 months) instead of browser storage.
 
 ## Recurring dates
 

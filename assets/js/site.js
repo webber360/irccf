@@ -1,5 +1,6 @@
 /*
-  irccf.org site script: year, theme switch, cookie consent + GA4, menu.
+  irccf.org site script: year, theme switch, menu.
+  Cookie consent and GA4 are handled by @webber360/consent, not here.
   Shared by index.html, privacy.html and 404.html; every block tolerates
   missing elements. Loaded with `defer` from /assets/js/site.js?v=N.
   When you change this file, bump ?v= in all three pages (assets are cached).
@@ -47,67 +48,9 @@
     if (mq.addEventListener) mq.addEventListener('change', onSystem);
   }
 
-  /* Cookie consent + Google Analytics 4 (loads only after "Accept") */
-  var GA_ID = 'G-6512PHVSLV';
-  var KEY = 'irccf-consent';
-  var consentBox = document.getElementById('consent');
-  function readConsent() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-  function saveConsent(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
-  var gaLoaded = false;
-  function loadGA() {
-    if (gaLoaded || !GA_ID) return;
-    gaLoaded = true;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { dataLayer.push(arguments); };
-    gtag('consent', 'default', {
-      analytics_storage: 'granted',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied'
-    });
-    gtag('js', new Date());
-    gtag('config', GA_ID);
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    document.head.appendChild(s);
-  }
-  function clearGACookies() {
-    var host = location.hostname.replace(/^www\./, '');
-    document.cookie.split(';').forEach(function (c) {
-      var name = c.split('=')[0].trim();
-      if (name === '_ga' || name.indexOf('_ga_') === 0) {
-        ['', '; domain=' + host, '; domain=.' + host].forEach(function (d) {
-          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
-        });
-      }
-    });
-  }
-  function showConsent() {
-    if (!consentBox) return;
-    requestAnimationFrame(function () { consentBox.setAttribute('data-show', ''); });
-  }
-  function hideConsent() { if (consentBox) consentBox.removeAttribute('data-show'); }
-  if (consentBox) consentBox.querySelectorAll('[data-consent]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var v = b.getAttribute('data-consent');
-      saveConsent(v);
-      hideConsent();
-      if (v === 'granted') {
-        loadGA();
-      } else {
-        if (window.gtag) gtag('consent', 'update', { analytics_storage: 'denied' });
-        window['ga-disable-' + GA_ID] = true;
-        clearGACookies();
-      }
-    });
-  });
-  document.querySelectorAll('[data-consent-open]').forEach(function (b) {
-    b.addEventListener('click', showConsent);
-  });
-  var stored = readConsent();
-  if (stored === 'granted') loadGA();
-  else if (stored !== 'denied') setTimeout(showConsent, 900);
+  /* Cookie consent comes from @webber360/consent (assets/consent/). Remove the choice the old
+     built-in banner kept in localStorage, so nothing stale stays in the browser. */
+  try { localStorage.removeItem('irccf-consent'); } catch (e) {}
 
   /* Menu */
   var btn = document.querySelector('.menu-btn');
