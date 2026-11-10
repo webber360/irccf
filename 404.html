@@ -103,7 +103,9 @@
 
     /* ---------- Cookie consent (@webber360/consent) ----------
        Themed only through the package's --consent-* variables, mapped to the site tokens
-       (dark mode follows because the tokens switch). No dimming or blur behind the windows. */
+       (dark mode follows because the tokens switch). The package's own overlay and blur behind
+       both windows are part of its design: never override --consent-backdrop, --consent-scrim
+       or --consent-backdrop-blur. */
     :root {
       --consent-font: var(--font-text);
       --consent-heading-font: var(--font-text);
@@ -123,9 +125,6 @@
       --consent-shadow: var(--shadow);
       --consent-focus: var(--focus);
       --consent-title-leading: 1.25;
-      --consent-backdrop: transparent;
-      --consent-scrim: transparent;
-      --consent-backdrop-blur: 0px;
     }
 
     /* ---------- Base ---------- */
