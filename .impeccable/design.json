@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T12:00:00Z",
+  "title": "Design System: IRCCF",
+  "extensions": {
+    "colorMeta": {
+      "signal-lime": { "role": "primary", "displayName": "Signal Lime", "canonical": "#D0F93B", "tonalRamp": ["#2b3608", "#4a5c10", "#6c8619", "#8fb122", "#b2db2c", "#d0f93b", "#e2fb83", "#f3fdd3"] },
+      "paddock-ink": { "role": "neutral", "displayName": "Paddock Ink", "canonical": "#1a1a1a", "tonalRamp": ["#0f0f10", "#1a1a1a", "#2e2e30", "#45464a", "#5f6166", "#8a8c91", "#c4c5c8", "#f3f3f3"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff" },
+      "muted-steel": { "role": "neutral", "displayName": "Muted Steel", "canonical": "#5f6166" },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(26, 26, 26, .12)" },
+      "hover-wash": { "role": "neutral", "displayName": "Hover Wash", "canonical": "#f3f3f3" },
+      "night-page": { "role": "neutral", "displayName": "Night Page", "canonical": "#0f0f10" },
+      "night-surface": { "role": "neutral", "displayName": "Night Surface", "canonical": "#19191b" },
+      "night-ink": { "role": "neutral", "displayName": "Night Ink", "canonical": "#f2f2f2" },
+      "night-muted": { "role": "neutral", "displayName": "Night Muted", "canonical": "#a2a4aa" },
+      "night-hairline": { "role": "neutral", "displayName": "Night Hairline", "canonical": "rgba(255, 255, 255, .12)" },
+      "night-hover": { "role": "neutral", "displayName": "Night Hover", "canonical": "rgba(255, 255, 255, .06)" },
+      "hero-black": { "role": "neutral", "displayName": "Hero Black", "canonical": "#121212" },
+      "on-hero": { "role": "neutral", "displayName": "On-Hero", "canonical": "#ffffff" },
+      "on-hero-muted": { "role": "neutral", "displayName": "On-Hero Muted", "canonical": "rgba(255, 255, 255, .74)" },
+      "on-hero-line": { "role": "neutral", "displayName": "On-Hero Line", "canonical": "rgba(255, 255, 255, .18)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero headline only, always three lines, uppercase." },
+      "title": { "displayName": "Title", "purpose": "Project names." },
+      "body": { "displayName": "Body", "purpose": "Base text and the privacy policy." },
+      "body-small": { "displayName": "Body Small", "purpose": "Project descriptions." },
+      "link": { "displayName": "Link", "purpose": "Project calls to action." },
+      "label": { "displayName": "Label", "purpose": "Uppercase eyebrows: PROJECTS, menu title." },
+      "credits": { "displayName": "Credits", "purpose": "The uppercase imprint billing block." }
+    },
+    "shadows": [
+      { "name": "float", "value": "0 1px 2px rgba(26, 26, 26, .06), 0 16px 40px -12px rgba(26, 26, 26, .22)", "purpose": "Pop-up menu and cookie windows, light mode." },
+      { "name": "float-night", "value": "0 1px 2px rgba(0, 0, 0, .4), 0 20px 50px -12px rgba(0, 0, 0, .7)", "purpose": "Pop-up menu and cookie windows, dark mode." },
+      { "name": "hero-scrim", "value": "linear-gradient(to top, rgba(10,10,10,.88) 0%, rgba(10,10,10,.55) 30%, rgba(10,10,10,0) 64%), linear-gradient(to right, rgba(10,10,10,.4), rgba(10,10,10,0) 60%)", "purpose": "Keeps hero text readable straight on the photo." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(.23, 1, .32, 1)", "purpose": "The only easing for movement; only transform and opacity animate." },
+      { "name": "press", "value": "scale(.95) 160ms ease-out", "purpose": "Round header buttons on press (.97 for cookie buttons)." },
+      { "name": "photo-settle", "value": "scale 1.06 to 1, 1600ms", "purpose": "Hero photo on load." },
+      { "name": "line-up", "value": "translateY(105%) to 0, 820ms, 90ms stagger", "purpose": "Headline lines slide up from their masks on load." },
+      { "name": "rule-draw", "value": "scaleX 0 to 1, 900ms, 420ms delay", "purpose": "PROJECTS rule draws left to right." },
+      { "name": "rise", "value": "opacity 0 / translateY(14px) to rest, 720ms, 70ms stagger", "purpose": "Projects and other reveal items on load." },
+      { "name": "theme-reveal", "value": "circular clip-path from the toggle, 480ms", "purpose": "Theme switch via View Transitions." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Theme switch",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Round 40px header button on Paper with a hairline border.",
+      "html": "<button class=\"ds-icon-btn\" type=\"button\" aria-label=\"Switch to dark theme\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z\"/></svg></button>",
+      "css": ".ds-icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 999px; border: 1px solid rgba(26,26,26,.12); background: #fff; color: #1a1a1a; cursor: pointer; padding: 0; transition: transform 160ms cubic-bezier(.23,1,.32,1), background-color 240ms ease; } .ds-icon-btn:hover { background: #f3f3f3; } .ds-icon-btn:active { transform: scale(.95); } .ds-icon-btn:focus-visible { outline: 2px solid #1a1a1a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Menu button",
+      "kind": "button",
+      "refersTo": "menu-button",
+      "description": "Round 40px solid ink button; two bars rotate into an X when open.",
+      "html": "<button class=\"ds-menu-btn\" type=\"button\" aria-label=\"Open menu\" aria-expanded=\"false\"><span class=\"ds-bars\"><span></span><span></span></span></button>",
+      "css": ".ds-menu-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 999px; border: 0; background: #1a1a1a; color: #fff; cursor: pointer; padding: 0; transition: transform 160ms cubic-bezier(.23,1,.32,1); } .ds-menu-btn:active { transform: scale(.95); } .ds-menu-btn:focus-visible { outline: 2px solid #1a1a1a; outline-offset: 3px; } .ds-bars { position: relative; width: 16px; height: 10px; } .ds-bars span { position: absolute; left: 0; right: 0; height: 1.6px; border-radius: 2px; background: currentColor; transition: transform 240ms cubic-bezier(.23,1,.32,1), top 240ms cubic-bezier(.23,1,.32,1); } .ds-bars span:nth-child(1) { top: 1px; } .ds-bars span:nth-child(2) { top: 7.4px; } .ds-menu-btn[aria-expanded=\"true\"] .ds-bars span:nth-child(1) { top: 4.2px; transform: rotate(45deg); } .ds-menu-btn[aria-expanded=\"true\"] .ds-bars span:nth-child(2) { top: 4.2px; transform: rotate(-45deg); }"
+    },
+    {
+      "name": "Pop-up menu",
+      "kind": "nav",
+      "refersTo": "menu-panel",
+      "description": "Paper panel with an uppercase label and links whose arrow nudges up-right on hover.",
+      "html": "<nav class=\"ds-menu\" aria-label=\"Projects\"><p class=\"ds-menu-title\">Projects</p><a class=\"ds-menu-link\" href=\"#\">PROCRAWLER <svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M5 11 11 5M6 5h5v5\"/></svg></a><a class=\"ds-menu-link\" href=\"#\">Linekillaz GTC <svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M5 11 11 5M6 5h5v5\"/></svg></a></nav>",
+      "css": ".ds-menu { width: 290px; padding: 8px; border-radius: 5px; background: #fff; border: 1px solid rgba(26,26,26,.12); box-shadow: 0 1px 2px rgba(26,26,26,.06), 0 16px 40px -12px rgba(26,26,26,.22); font-family: Inter, system-ui, sans-serif; color: #1a1a1a; } .ds-menu-title { margin: 8px 12px 6px; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #5f6166; } .ds-menu-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 12px; border-radius: 5px; font-size: 15.5px; font-weight: 500; letter-spacing: -.01em; color: inherit; text-decoration: none; transition: background-color 160ms ease; } .ds-menu-link svg { color: #5f6166; transition: transform 200ms cubic-bezier(.23,1,.32,1), color 160ms ease; } .ds-menu-link:hover { background: #f3f3f3; } .ds-menu-link:hover svg { transform: translate(2px,-2px); color: #1a1a1a; } .ds-menu-link:focus-visible { outline: 2px solid #1a1a1a; outline-offset: 3px; }"
+    },
+    {
+      "name": "Project link",
+      "kind": "custom",
+      "refersTo": "project-cta",
+      "description": "White text link on the photo; the underline draws in and the arrow loops on hover.",
+      "html": "<div class=\"ds-hero-swatch\"><a class=\"ds-cta\" href=\"#\"><span class=\"ds-cta-label\">Join Today</span><span class=\"ds-cta-arrow\"><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></span></a></div>",
+      "css": ".ds-hero-swatch { background: #121212; padding: 24px; border-radius: 5px; } .ds-cta { display: inline-flex; align-items: center; gap: 8px; padding: 4px 0; font: 600 15px/1.2 Inter, system-ui, sans-serif; letter-spacing: -.005em; color: #fff; text-decoration: none; white-space: nowrap; } .ds-cta-label { background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat; padding-bottom: 2px; transition: background-size 280ms cubic-bezier(.23,1,.32,1); } .ds-cta-arrow { position: relative; width: 16px; height: 16px; overflow: hidden; flex: none; } .ds-cta-arrow svg { position: absolute; inset: 0; width: 16px; height: 16px; transition: transform 320ms cubic-bezier(.23,1,.32,1); } .ds-cta-arrow svg + svg { transform: translateX(-120%); } .ds-cta:hover .ds-cta-label, .ds-cta:focus-visible .ds-cta-label { background-size: 100% 1px; } .ds-cta:hover .ds-cta-arrow svg:first-child { transform: translateX(120%); } .ds-cta:hover .ds-cta-arrow svg + svg { transform: none; } .ds-cta:focus-visible { outline: 2px solid #D0F93B; outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Project item",
+      "kind": "custom",
+      "refersTo": "hero",
+      "description": "Logo slot, name, description and link straight on the photo, no box; the logo lifts on hover.",
+      "html": "<div class=\"ds-hero-swatch ds-project\"><div class=\"ds-project-logo\"><span class=\"ds-logo-mark\">W</span></div><a class=\"ds-project-name\" href=\"#\">WRCCA World Ranking</a><p class=\"ds-project-desc\">World ranking of rock crawler RC drivers.</p></div>",
+      "css": ".ds-hero-swatch { background: #121212; padding: 24px; border-radius: 5px; } .ds-project { display: flex; flex-direction: column; align-items: flex-start; font-family: Inter, system-ui, sans-serif; } .ds-project-logo { height: 56px; display: flex; align-items: center; margin-bottom: 16px; } .ds-logo-mark { font: 700 44px/1 Rajdhani, 'Arial Narrow', sans-serif; color: #fff; transition: transform 220ms cubic-bezier(.23,1,.32,1); display: inline-block; } .ds-project:hover .ds-logo-mark { transform: translateY(-3px) scale(1.03); } .ds-project-name { font-size: 18px; font-weight: 600; letter-spacing: -.015em; line-height: 1.25; color: #fff; text-decoration: none; } .ds-project-name:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; } .ds-project-desc { margin: 3px 0 0; font-size: 14px; line-height: 1.4; color: rgba(255,255,255,.74); }"
+    },
+    {
+      "name": "Hero headline",
+      "kind": "custom",
+      "refersTo": "hero",
+      "description": "Three-line Rajdhani poster headline, last line in Signal Lime.",
+      "html": "<div class=\"ds-hero-swatch\"><h1 class=\"ds-hero-title\"><span>Serving Pro</span><span>Rock Crawler R/C</span><span class=\"ds-since\">Since 2019</span></h1></div>",
+      "css": ".ds-hero-swatch { background: #121212; padding: 24px; border-radius: 5px; } .ds-hero-title { margin: 0; font-family: Rajdhani, 'Arial Narrow', 'Roboto Condensed', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 56px; line-height: .86; letter-spacing: -.022em; color: #fff; } .ds-hero-title span { display: block; } .ds-since { color: #D0F93B; }"
+    },
+    {
+      "name": "Imprint billing block",
+      "kind": "custom",
+      "refersTo": "hero",
+      "description": "One uppercase credits line: muted labels, ink values at the same weight, only IMPRINT bold.",
+      "html": "<p class=\"ds-credits\"><b>Imprint</b><span class=\"ds-sep\">/</span>Company Name: <span class=\"ds-v\">IRCCF Licensing Ltd.</span><span class=\"ds-sep\">/</span>Email: <span class=\"ds-v\">hello@irccf.org</span></p>",
+      "css": ".ds-credits { margin: 0; font: 400 11.5px/1.85 Inter, system-ui, sans-serif; letter-spacing: .05em; text-transform: uppercase; color: #5f6166; } .ds-credits b { font-weight: 700; color: #1a1a1a; letter-spacing: .12em; } .ds-v { color: #1a1a1a; } .ds-sep { margin: 0 .5em; opacity: .45; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Podium Poster",
+    "overview": "irccf.org is set like a championship poster. One framed photograph from the scene fills the first screen, a towering condensed headline stands on it (\"Serving Pro / Rock Crawler R/C / Since 2019\"), the three project marks line up beneath it like the names on a podium, and the legal details sit below the fold as a single billing block, the way credits run along the foot of a movie poster. Everything fits one screen; there is nothing to scroll for except the fine print.\n\nThe poster is the loud part; everything around it is tactile and confident. Controls are solid and sized for a thumb, they press in when touched, the project logos lift a little on hover, and the link arrows loop forward. The palette is almost entirely ink, paper and photograph, so the single Signal Lime line and the logo's lime bar read as the federation's signature. Light and dark mode are both first-class and switch with a circular reveal from the toggle.",
+    "keyCharacteristics": [
+      "One framed hero photo with a bottom-weighted dark scrim; all hero text sits straight on the image, never in a box.",
+      "Rajdhani 700 uppercase for the headline only; Inter for everything else.",
+      "One accent, Signal Lime, used as a signal, never as a fill for large areas.",
+      "5px corners everywhere, except the round theme and menu buttons.",
+      "A once-per-load motion sequence that sets reading order, then the page holds still."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Signal Lime appears on at most three things per screen: the logo bar, \"Since 2019\" and a focus ring. It is never a button fill, a background or a gradient.", "section": "colors" },
+      { "name": "The Paddock Ink Rule", "body": "Dark text is always Paddock Ink. No greys darker than Muted Steel, no tinted blacks, and no purple anywhere.", "section": "colors" },
+      { "name": "The Poster Type Rule", "body": "Rajdhani is for the big headline and nothing else: no Rajdhani buttons, labels or body copy.", "section": "typography" },
+      { "name": "The Photo Is the Depth Rule", "body": "The hero gets its depth from the image and a bottom-weighted scrim (88% black at the foot to clear at 64% height, plus a soft left-side darkening). Nothing on the hero gets a box, a card or a shadow.", "section": "elevation" },
+      { "name": "The Consent Layer Rule", "body": "The cookie popup and Cookie settings window sit over a dark overlay with a 4px blur of the page. That overlay is part of the banner's design and is never switched off.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep header, headline and all three projects on the first screen at every size; only the imprint goes below.",
+      "Do keep the headline at exactly three lines: Serving Pro / Rock Crawler R/C / Since 2019, the last line in Signal Lime.",
+      "Do use the custom ease-out cubic-bezier(.23, 1, .32, 1) and animate only transform and opacity.",
+      "Do keep the load sequence: the photo settles, headline lines slide up from their masks with a 90ms stagger, the PROJECTS rule draws, projects rise. Respect reduced motion with a plain fade.",
+      "Do theme anything new from the existing tokens and check it in light and dark mode."
+    ],
+    "donts": [
+      "Don't use em or en dashes in copy.",
+      "Don't put boxes, cards or pill buttons on the hero photo.",
+      "Don't use Signal Lime as a fill or background, and don't add a second accent colour or any purple.",
+      "Don't use any radius other than 5px, except the two round header buttons.",
+      "Don't add scroll-triggered or perpetual animations.",
+      "Don't load fonts or other resources from third parties; everything is self-hosted.",
+      "Don't override the cookie windows' overlay and blur, or style the consent package's own classes."
+    ]
+  }
+}
